@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeOps Command Center</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-content">
+        <h1 class="logo">LifeOps Command Center</h1>
+        <nav class="nav">
+          <button class="nav-btn active" data-view="contacts">Contacts</button>
+          <button class="nav-btn" data-view="tasks">Tasks</button>
+          <button class="nav-btn" data-view="notes">Notes</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+
+        <!-- CONTACTS VIEW -->
+        <section id="contacts" class="view active">
+          <h2>Contacts</h2>
+          <form id="contact-form" class="add-form">
+            <input type="text" id="contact-name" placeholder="Name" required />
+            <input type="email" id="contact-email" placeholder="Email" required />
+            <input type="tel" id="contact-phone" placeholder="Phone" />
+            <select id="contact-category">
+              <option value="friend">Friend</option>
+              <option value="family">Family</option>
+              <option value="work">Work</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Add Contact</button>
+          </form>
+          <div class="filter-bar">
+            <input type="text" id="contact-search" placeholder="Search contacts…" />
+          </div>
+          <ul id="contacts-list" class="item-list"></ul>
+        </section>
+
+        <!-- TASKS VIEW -->
+        <section id="tasks" class="view">
+          <h2>Tasks</h2>
+          <form id="task-form" class="add-form">
+            <input type="text" id="task-text" placeholder="What needs to be done?" required />
+            <input type="text" id="task-description" placeholder="Description (optional)" />
+            <input type="date" id="task-due-date" />
+            <select id="task-priority">
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="low">Low</option>
+            </select>
+            <select id="task-contact">
+              <option value="">None</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+          </form>
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+          <ul id="tasks-list" class="item-list"></ul>
+        </section>
+
+        <!-- NOTES VIEW -->
+        <section id="notes" class="view">
+          <h2>Notes</h2>
+          <form id="note-form" class="add-form">
+            <input type="text" id="note-title" placeholder="Note title" required />
+            <textarea id="note-body" placeholder="Write your note…" rows="3"></textarea>
+            <select id="note-category">
+              <option value="general">General</option>
+              <option value="meeting">Meeting</option>
+              <option value="idea">Idea</option>
+              <option value="reference">Reference</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Add Note</button>
+          </form>
+          <ul id="notes-list" class="note-grid"></ul>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>LifeOps Command Center &mdash; Built with Claude Code</p>
+      </div>
+    </footer>
+
+    <script src="components/ContactCard.js"></script>
+    <script src="components/AddContactForm.js"></script>
+    <script src="components/ContactList.js"></script>
+    <script src="components/TaskItem.js"></script>
+    <script src="components/AddTaskForm.js"></script>
+    <script src="components/TaskList.js"></script>
+    <script src="components/NoteCard.js"></script>
+    <script src="components/AddNoteForm.js"></script>
+    <script src="components/NoteList.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

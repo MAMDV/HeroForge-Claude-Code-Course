@@ -1,0 +1,38 @@
+[
+  {
+    "id": "t1",
+    "title": "Email project update to Sarah",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2026-03-15T00:00:00.000Z",
+    "contactId": "c1",
+    "createdAt": "2026-03-10T10:00:00.000Z"
+  },
+  {
+    "id": "t2",
+    "title": "Buy groceries for the week",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": null,
+    "contactId": null,
+    "createdAt": "2026-03-10T10:01:00.000Z"
+  },
+  {
+    "id": "t3",
+    "title": "Call Mom about weekend plans",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2026-03-12T00:00:00.000Z",
+    "contactId": "c2",
+    "createdAt": "2026-03-10T10:02:00.000Z"
+  },
+  {
+    "id": "t4",
+    "title": "Review pull request",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2026-03-20T00:00:00.000Z",
+    "contactId": "c5",
+    "createdAt": "2026-03-10T10:03:00.000Z"
+  }
+]

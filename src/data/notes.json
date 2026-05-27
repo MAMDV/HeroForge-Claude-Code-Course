@@ -1,0 +1,26 @@
+[
+  {
+    "id": "n1",
+    "title": "Sprint Planning Notes",
+    "body": "Discussed backlog priorities for Q2. Focus on API performance and onboarding flow improvements. Sarah to lead the performance audit, Bob to handle onboarding wireframes.",
+    "category": "meeting",
+    "createdAt": "2026-01-15T10:00:00.000Z",
+    "updatedAt": "2026-01-15T10:30:00.000Z"
+  },
+  {
+    "id": "n2",
+    "title": "App Gamification Concept",
+    "body": "What if we added streaks for completing tasks on time? Could show a flame emoji next to the task count. Maybe weekly summaries with fun stats like 'You completed 12 tasks this week!'",
+    "category": "idea",
+    "createdAt": "2026-01-20T14:00:00.000Z",
+    "updatedAt": "2026-01-21T09:15:00.000Z"
+  },
+  {
+    "id": "n3",
+    "title": "Vite Environment Variables",
+    "body": "Prefix all client-side env vars with VITE_. Access via import.meta.env.VITE_VAR_NAME. Server-only vars without the prefix are not exposed to the browser.",
+    "category": "reference",
+    "createdAt": "2026-01-25T16:00:00.000Z",
+    "updatedAt": "2026-01-25T16:00:00.000Z"
+  }
+]

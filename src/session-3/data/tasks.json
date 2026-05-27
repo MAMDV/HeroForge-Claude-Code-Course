@@ -1,0 +1,45 @@
+{
+  "_note": "Use fictional data only. Do not enter real personal information.",
+  "tasks": [
+    {
+      "id": "t1",
+      "text": "Call Mom next Friday",
+      "description": "Check in about weekend plans and birthday dinner",
+      "priority": "high",
+      "status": "todo",
+      "completed": false,
+      "contactId": "c2",
+      "dueDate": "2026-04-10"
+    },
+    {
+      "id": "t2",
+      "text": "Email Sarah the project update",
+      "description": "Send the Q2 progress report with timeline changes",
+      "priority": "medium",
+      "status": "in-progress",
+      "completed": false,
+      "contactId": "c1",
+      "dueDate": "2026-04-08"
+    },
+    {
+      "id": "t3",
+      "text": "Buy groceries",
+      "description": "Milk, eggs, bread, vegetables for the week",
+      "priority": "low",
+      "status": "todo",
+      "completed": false,
+      "contactId": null,
+      "dueDate": "2026-04-07"
+    },
+    {
+      "id": "t4",
+      "text": "Fix the login bug",
+      "description": "Users getting 401 on valid credentials — check token refresh logic",
+      "priority": "high",
+      "status": "done",
+      "completed": true,
+      "contactId": "c5",
+      "dueDate": "2026-04-06"
+    }
+  ]
+}

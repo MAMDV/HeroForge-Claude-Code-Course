@@ -1,0 +1,37 @@
+{
+  "_note": "Use fictional data only. Do not enter real personal information.",
+  "tasks": [
+    {
+      "id": "t1",
+      "text": "Call Mom next Friday !!!",
+      "priority": "high",
+      "completed": false,
+      "contactId": "c2",
+      "dueDate": null
+    },
+    {
+      "id": "t2",
+      "text": "Email Sarah the project update by Monday",
+      "priority": "medium",
+      "completed": false,
+      "contactId": "c1",
+      "dueDate": null
+    },
+    {
+      "id": "t3",
+      "text": "Buy groceries",
+      "priority": "medium",
+      "completed": false,
+      "contactId": null,
+      "dueDate": null
+    },
+    {
+      "id": "t4",
+      "text": "Fix the login bug urgent",
+      "priority": "high",
+      "completed": false,
+      "contactId": null,
+      "dueDate": null
+    }
+  ]
+}

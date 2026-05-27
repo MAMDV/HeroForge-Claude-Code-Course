@@ -1,0 +1,51 @@
+[
+  {
+    "session": 3,
+    "title": "Real Projects, Real Git",
+    "features": [
+      "Contact management",
+      "Task list with priorities",
+      "Note taking with categories",
+      "Search and filter"
+    ]
+  },
+  {
+    "session": 4,
+    "title": "Multi-File Apps and CLAUDE.md",
+    "features": [
+      "React component architecture",
+      "AppContext with useReducer",
+      "localStorage persistence",
+      "Theme toggle",
+      "Accent color picker"
+    ]
+  },
+  {
+    "session": 5,
+    "title": "Connecting to the Outside World",
+    "features": [
+      "Weather widget",
+      "GitHub activity feed",
+      "Smart task input with NLP",
+      "Google Workspace mock integration"
+    ]
+  },
+  {
+    "session": 6,
+    "title": "Cloud Tasks and Mobile Control",
+    "features": [
+      "Unit test suite",
+      "Component tests",
+      "Personalization panel"
+    ]
+  },
+  {
+    "session": 7,
+    "title": "Cowork and Automation",
+    "features": [
+      "About page",
+      "Changelog display",
+      "Session timeline"
+    ]
+  }
+]

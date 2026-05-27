@@ -1,0 +1,230 @@
+/* Session 1: Personal Landing Page Styles
+   Standalone CSS — no build tools required.
+   Responsive layout with mobile-first approach. */
+
+/* ========== RESET & BASE ========== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #1a1a2e;
+  background-color: #ffffff;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== LAYOUT ========== */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background-color: #f0f4ff;
+}
+
+/* ========== HERO ========== */
+
+.hero {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+  color: #ffffff;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-nav a {
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.hero-nav a:hover,
+.hero-nav a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  text-decoration: none;
+}
+
+/* ========== TYPOGRAPHY ========== */
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #1a1a2e;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+/* ========== INTERESTS GRID ========== */
+
+.interests-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.interest-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.interest-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.interest-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.interest-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.interest-card p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* ========== CONTACT ========== */
+
+.contact-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.contact-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+/* ========== FOOTER ========== */
+
+.footer {
+  background-color: #1a1a2e;
+  color: #a0aec0;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.footer a {
+  color: #90cdf4;
+}
+
+.footer p {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+/* ========== RESPONSIVE: TABLET (640px+) ========== */
+
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.375rem;
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========== RESPONSIVE: DESKTOP (960px+) ========== */
+
+@media (min-width: 960px) {
+  .hero {
+    padding: 8rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

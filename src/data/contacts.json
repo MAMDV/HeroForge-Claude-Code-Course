@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c1",
+    "name": "Sarah Chen",
+    "email": "sarah@example.com",
+    "phone": "555-0101",
+    "category": "work",
+    "createdAt": "2026-01-15T09:00:00.000Z"
+  },
+  {
+    "id": "c2",
+    "name": "Mom",
+    "email": "mom@example.com",
+    "phone": "555-0102",
+    "category": "family",
+    "createdAt": "2026-01-15T09:01:00.000Z"
+  },
+  {
+    "id": "c3",
+    "name": "Bob Builder",
+    "email": "bob@example.com",
+    "phone": "555-0103",
+    "category": "work",
+    "createdAt": "2026-01-15T09:02:00.000Z"
+  },
+  {
+    "id": "c4",
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "phone": "",
+    "category": "personal",
+    "createdAt": "2026-01-15T09:03:00.000Z"
+  },
+  {
+    "id": "c5",
+    "name": "Dev Team Lead",
+    "email": "lead@example.com",
+    "phone": "555-0105",
+    "category": "work",
+    "createdAt": "2026-01-15T09:04:00.000Z"
+  }
+]
