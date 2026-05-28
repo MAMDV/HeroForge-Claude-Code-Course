@@ -1,9 +1,9 @@
-# Session 2 Workshop: Setting Up Your Dev Environment
+# Workshop 2: Setting Up Your Dev Environment
 
 **Estimated Time:** 45 minutes
 **Difficulty:** Beginner (zero prior experience required)
 **Surface:** Terminal + VS Code
-**Prerequisites:** Completed Session 1 (Your First AI-Built Web Page), GitHub account
+**Prerequisites:** Completed Workshop 1 (Your First AI-Built Web Page), GitHub account
 
 ---
 
@@ -204,18 +204,7 @@ The file disappears from the File Explorer.
 
 ### Step 11: Install Claude Code
 
-In the terminal, run:
-
-```bash
-npm install -g @anthropic-ai/claude-code
-```
-
-**Breaking this down:**
-- `npm install` — install a package
-- `-g` — install it globally (available everywhere)
-- `@anthropic-ai/claude-code` — the package name
-
-This takes about 30 seconds. Wait for it to complete.
+Follow the install guide at https://code.claude.com/docs/en/quickstart
 
 ### Step 12: Verify Claude Code
 
@@ -225,7 +214,7 @@ claude --version
 
 **Expected output:** A version number (e.g., `1.x.x`)
 
-> **What just happened?** You installed Claude Code as a command-line tool. Unlike the web version from Session 1, this version can read and write files in your project, run terminal commands, and interact with your entire codebase.
+> **What just happened?** You installed Claude Code as a command-line tool. Unlike the web version from Workshop 1, this version can read and write files in your project, run terminal commands, and interact with your entire codebase.
 
 ---
 
@@ -286,14 +275,14 @@ Now that you've had your first Claude Code interaction, let's check how much of 
 
 You should see a token count showing how much of your context window has been used.
 
-> **What are tokens?** Every message you send and every response Claude gives uses tokens from your context window — think of it like a budget. Right now you've barely used any. In Session 4, we'll learn strategies for managing this budget on larger projects. For now, just remember: `/context` shows your usage at any time.
+> **What are tokens?** Every message you send and every response Claude gives uses tokens from your context window — think of it like a budget. Right now you've barely used any. In Workshop 4, we'll learn strategies for managing this budget on larger projects. For now, just remember: `/context` shows your usage at any time.
 
 ### Step 15: Modify the File with Claude Code
 
 Now let's make a change using natural language:
 
 ```bash
-claude "Add a line to hello.txt that says: I completed Session 2 on $(date +%Y-%m-%d)"
+claude "Add a line to hello.txt that says: I completed Workshop 2 on $(date +%Y-%m-%d)"
 ```
 
 Verify the change:
@@ -335,7 +324,7 @@ echo "=== All checks complete ==="
 
 **All five checks should show values (no errors).** If hello.txt exists: YES, your dev environment is fully verified.
 
-Congratulations — you've completed Session 2!
+Congratulations — you've completed Workshop 2!
 
 ---
 
@@ -346,7 +335,7 @@ Congratulations — you've completed Session 2!
 | Codespace won't start | GitHub service issue | Wait 2 minutes and try again; or use a different browser |
 | Terminal not visible | Panel may be collapsed | Press `Ctrl+`` ` or go to Terminal > New Terminal |
 | `node --version` shows "not found" | Node not installed | Should not happen in Codespace; restart the Codespace |
-| `npm install -g` fails | Permission issue | Try `sudo npm install -g @anthropic-ai/claude-code` |
+| Install problems | Setup issue | Follow the install guide at https://code.claude.com/docs/en/quickstart |
 | `claude` command not found after install | Shell not refreshed | Close terminal and open a new one, or run `source ~/.bashrc` |
 | Claude Code asks for API key | Key not configured | Ask instructor for temporary key, or set: `export ANTHROPIC_API_KEY=your-key` |
 | File Explorer doesn't show new file | VS Code lag | Click the refresh icon in the File Explorer, or wait a moment |
@@ -403,7 +392,7 @@ If you want to try this, ask Claude Code:
 claude "Help me set up a status line that shows my model and context usage"
 ```
 
-This is completely optional. We'll cover context management in depth in Session 4. But if you like having information visible while you work, it's a nice quality-of-life upgrade.
+This is completely optional. We'll cover context management in depth in Workshop 4. But if you like having information visible while you work, it's a nice quality-of-life upgrade.
 
 ---
 
@@ -427,4 +416,4 @@ This is completely optional. We'll cover context management in depth in Session 
 
 ## What's Next
 
-**Session 3: Real Projects, Real Git** — You'll start building the LifeOps Command Center app. You'll add contacts, tasks, and notes to a starter application using Claude Code, and learn the Git workflow for saving and sharing your changes. The beginner and experienced developer tracks merge from Session 3 onward — you're ready.
+**Workshop 3: Real Projects, Real Git** — You'll start building the LifeOps Command Center app. You'll add contacts, tasks, and notes to a starter application using Claude Code, and learn the Git workflow for saving and sharing your changes. The beginner and experienced developer tracks merge from Workshop 3 onward — you're ready.

@@ -1,4 +1,4 @@
-# Session 6 Reference: Claude Code Hooks
+# Workshop 6 Reference: Claude Code Hooks
 
 **What this covers:** How to use hooks for automated validation, security, notification, and logging in Claude Code.
 
@@ -238,7 +238,7 @@ All hooks run in order. If any hook fails (non-zero exit), the action is blocked
 
 ## Looking Ahead
 
-In Session 7, you will use hooks for more advanced scenarios:
+In Workshop 7, you will use hooks for more advanced scenarios:
 - Security hooks that detect secrets in code
 - Compliance hooks that enforce business rules
 - Agent SDK hooks (`PostToolUse`) that transform data between agent steps

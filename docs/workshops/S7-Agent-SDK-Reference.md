@@ -1,4 +1,4 @@
-# Session 7 Reference: Claude Agent SDK
+# Workshop 7 Reference: Claude Agent SDK
 
 **Purpose:** Quick reference for the agentic loop lifecycle, stop_reason values, AgentDefinition structure, PostToolUse hooks, and anti-patterns.
 

@@ -1,9 +1,9 @@
 # HeroForge.AI Course: Mastering Claude Code
-## Session 6 Workshop: Cloud Tasks and Mobile Control
+## Workshop 6: Cloud Tasks and Mobile Control
 
 **Estimated Time:** 45-60 minutes
 **Difficulty:** Intermediate
-**Prerequisites:** Completed Sessions 1-5 (LifeOps app with components, context, routing, and weather widget)
+**Prerequisites:** Completed Workshops 1-5 (LifeOps app with components, context, routing, and weather widget)
 
 ---
 
@@ -490,7 +490,7 @@ props — you used 'mail' instead of 'email'. Fix the prop name."
 | Information not available | No | Claude cannot guess missing data |
 | Task exceeds capabilities | No | Different approach needed |
 
-> **Key concept:** The more specific your error feedback, the faster Claude converges on a fix. Remember from Session 5: structured output with JSON schemas eliminates syntax errors entirely, so you only need to worry about semantic errors.
+> **Key concept:** The more specific your error feedback, the faster Claude converges on a fix. Remember from Workshop 5: structured output with JSON schemas eliminates syntax errors entirely, so you only need to worry about semantic errors.
 
 ---
 
@@ -563,7 +563,7 @@ Practice the full mobile workflow:
 - [ ] Tests still pass after the change
 - [ ] The new color appears in the accent color picker
 
-> **Key concept:** This is a preview of the full GitHub Actions workflow we will set up in Session 8. For now, you create issues manually and use Claude Code to implement them. In Session 8, this becomes fully automated.
+> **Key concept:** This is a preview of the full GitHub Actions workflow we will set up in Workshop 8. For now, you create issues manually and use Claude Code to implement them. In Workshop 8, this becomes fully automated.
 
 ---
 

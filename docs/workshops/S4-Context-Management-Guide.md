@@ -1,6 +1,6 @@
-# Context Window Management Guide — Session 4 Reference
+# Context Window Management Guide — Workshop 4 Reference
 
-**Session**: 4 of 8
+**Workshop**: 4 of 8
 **Topic**: Understanding and managing the context window in Claude Code
 
 ---

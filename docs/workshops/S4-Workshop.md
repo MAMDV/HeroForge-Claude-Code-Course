@@ -1,9 +1,9 @@
-# Mastering Claude Code — Session 4 Workshop
+# Mastering Claude Code — Workshop 4
 ## Multi-File Apps and CLAUDE.md
 
 **Estimated Time:** 60 minutes
 **Difficulty:** Intermediate
-**Prerequisites:** Completed Sessions 1-3 (HTML page, dev environment, Git workflow)
+**Prerequisites:** Completed Workshops 1-3 (HTML page, dev environment, Git workflow)
 **Surface:** Terminal CLI
 
 ---
@@ -47,7 +47,7 @@ ls src/           # Should show your current source files
 
 ### Project State Check
 
-Your LifeOps project from Session 3 should have:
+Your LifeOps project from Workshop 3 should have:
 - A working app with contacts and tasks (vanilla JS)
 - Git configured with at least one commit
 - `package.json` present in the project root
@@ -470,11 +470,11 @@ At the end of this session, run:
 /handoff
 ```
 
-This saves your work state. When you start Session 5, run `/pickup` to give Claude the context it needs.
+This saves your work state. When you start Workshop 5, run `/pickup` to give Claude the context it needs.
 
 ### Step 7.5: Skills Preview
 
-In addition to commands, Claude Code supports **skills** — multi-file packages with their own scripts, references, and templates. Think of commands as recipe cards and skills as entire cookbooks. We will explore skills in depth in Session 7.
+In addition to commands, Claude Code supports **skills** — multi-file packages with their own scripts, references, and templates. Think of commands as recipe cards and skills as entire cookbooks. We will explore skills in depth in Workshop 7.
 
 ### Checkpoint
 - [ ] `.claude/commands/handoff.md` exists
@@ -537,14 +537,14 @@ claude "Refactor [description]... Follow the conventions in CLAUDE.md."
 | Shift+Tab | Activate plan mode before a prompt |
 | Alt+P | Switch between Opus, Sonnet, and Haiku models |
 
-### Preparing for Session 5
+### Preparing for Workshop 5
 
-Session 5 introduces external data connections:
+Workshop 5 introduces external data connections:
 - Your dashboard will show live weather data
 - MCP (Model Context Protocol) connects Claude Code to external services
 - New components will fetch and display API data
 
-**Before you leave:** Run `/handoff` to save your session state. Start Session 5 with `/pickup`.
+**Before you leave:** Run `/handoff` to save your session state. Start Workshop 5 with `/pickup`.
 
 To prepare:
 - Review your CLAUDE.md and ensure it is complete

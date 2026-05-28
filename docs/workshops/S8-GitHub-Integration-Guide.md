@@ -1,4 +1,4 @@
-# Session 8 Reference: GitHub Integration with Claude
+# Workshop 8 Reference: GitHub Integration with Claude
 
 This reference covers installing the Claude GitHub App, using the `@claude` workflow in issues and PRs, and best practices for asynchronous development from any device.
 

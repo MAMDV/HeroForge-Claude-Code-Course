@@ -1,9 +1,9 @@
 # HeroForge.AI Course: Mastering Claude Code
-## Session 7 Workshop: Agents, Skills, and Automation
+## Workshop 7: Agents, Skills, and Automation
 
 **Estimated Time:** 60 minutes
 **Difficulty:** Intermediate-Advanced
-**Prerequisites:** Completed Sessions 1-6 (LifeOps app with components, tests, API integrations, cloud tasks, and validation hooks)
+**Prerequisites:** Completed Workshops 1-6 (LifeOps app with components, tests, API integrations, cloud tasks, and validation hooks)
 
 ---
 
@@ -39,12 +39,12 @@ npm run build
 npm test
 ```
 
-### Session 6 Deliverables
+### Workshop 6 Deliverables
 
 Ensure you have:
 1. **LifeOps app** building and running with all components
 2. **Test suite** passing with Vitest and React Testing Library
-3. **Validation hooks** from Session 6 committed and working
+3. **Validation hooks** from Workshop 6 committed and working
 4. **Git repository** up to date with all prior session work pushed
 
 ---
@@ -173,7 +173,7 @@ Understand the difference between commands and skills, explore skill structure, 
 
 ### Instructions
 
-1. Review the commands you created in Session 4:
+1. Review the commands you created in Workshop 4:
 
 ```
 "List all custom commands in .claude/commands/ and describe what each one does."
@@ -333,10 +333,10 @@ Apply session management and context optimization strategies to maintain product
 "List all currently enabled MCPs. Which ones are not needed for today's work? Show me how to disable them temporarily."
 ```
 
-5. Connect to the handoff pattern from Session 4:
+5. Connect to the handoff pattern from Workshop 4:
 
 ```
-"What is the difference between using our /handoff command from Session 4 and using --resume? When should I use each?"
+"What is the difference between using our /handoff command from Workshop 4 and using --resume? When should I use each?"
 ```
 
 ### Decision Framework
@@ -344,7 +344,7 @@ Apply session management and context optimization strategies to maintain product
 | Scenario | Action |
 |----------|--------|
 | Continuing today's work after lunch | `--resume <session-name>` |
-| Picking up work after several days | `/pickup` command (Session 4 handoff) |
+| Picking up work after several days | `/pickup` command (Workshop 4 handoff) |
 | Trying two different refactoring approaches | `fork_session` |
 | Context at 80%+ usage | Start new session with summary |
 | Switching from planning to building phase | `/compact` then continue |

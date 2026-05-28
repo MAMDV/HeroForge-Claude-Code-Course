@@ -1,9 +1,9 @@
 # HeroForge.AI Course: Mastering Claude Code
-## Session 9 Workshop: Make It Yours — Visual Identity & AI-Enhanced Design
+## Workshop 9: Make It Yours — Visual Identity & AI-Enhanced Design
 
 **Estimated Time:** 60 minutes (extended bonus session)
 **Difficulty:** Intermediate-Advanced
-**Prerequisites:** Completed Sessions 1-8 (LifeOps Command Center deployed to Vercel, all features functional)
+**Prerequisites:** Completed Workshops 1-8 (LifeOps Command Center deployed to Vercel, all features functional)
 
 ---
 
@@ -41,7 +41,7 @@ npm test
 # Open your Vercel production URL in a browser
 ```
 
-### What You Should Have From Session 8
+### What You Should Have From Workshop 8
 
 Confirm these are in place:
 

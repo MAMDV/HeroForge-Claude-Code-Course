@@ -1,9 +1,9 @@
 # HeroForge.AI Course: Mastering Claude Code
-## Session 8 Workshop: Ship It — Deploy and Present
+## Workshop 8: Ship It — Deploy and Present
 
 **Estimated Time:** 45-60 minutes
 **Difficulty:** Intermediate-Advanced
-**Prerequisites:** Completed Sessions 1-7 (LifeOps app with components, tests, API integrations, cloud tasks, agents, skills, and automation)
+**Prerequisites:** Completed Workshops 1-7 (LifeOps app with components, tests, API integrations, cloud tasks, agents, skills, and automation)
 
 ---
 
@@ -101,14 +101,14 @@ npm run build && npm test && npm run lint
 ## Exercise 1b: Pre-Push Security Hook (5 minutes)
 
 ### Goal
-Add a hook that scans for hardcoded secrets before any `git push`, applying the hook pattern from Session 7 to production safety.
+Add a hook that scans for hardcoded secrets before any `git push`, applying the hook pattern from Workshop 7 to production safety.
 
 ### Instructions
 
 1. Ask Claude to set up the security hook:
 
 ```
-claude "Create a post-tool-use hook in .claude/settings.json that intercepts git push commands. The hook should scan source files in src/ for patterns matching API keys (sk-, AKIA, ghp_), hardcoded passwords, and .env file patterns. If secrets are detected, block the push and display a warning. This is the same hook pattern from Session 7 applied to deployment safety."
+claude "Create a post-tool-use hook in .claude/settings.json that intercepts git push commands. The hook should scan source files in src/ for patterns matching API keys (sk-, AKIA, ghp_), hardcoded passwords, and .env file patterns. If secrets are detected, block the push and display a warning. This is the same hook pattern from Workshop 7 applied to deployment safety."
 ```
 
 2. Test the hook by verifying it does not block a clean push:
@@ -268,15 +268,15 @@ git push -u origin release/v1.0.0
 ```
 claude "Create a pull request from release/v1.0.0 to main with:
 - Title: 'LifeOps Command Center v1.0.0'
-- Description that summarizes all features built across Sessions 1-8:
-  - Session 1: Static landing page
-  - Session 2: Dev environment setup
-  - Session 3: Contacts and task list with Git workflow
-  - Session 4: React component architecture with CLAUDE.md
-  - Session 5: Weather widget, GitHub activity, smart task parser
-  - Session 6: Unit tests, accent color picker, cloud tasks
-  - Session 7: Agents, skills, hooks, and the Claude Agent SDK
-  - Session 8: Deployment and release"
+- Description that summarizes all features built across Workshops 1-8:
+  - Workshop 1: Static landing page
+  - Workshop 2: Dev environment setup
+  - Workshop 3: Contacts and task list with Git workflow
+  - Workshop 4: React component architecture with CLAUDE.md
+  - Workshop 5: Weather widget, GitHub activity, smart task parser
+  - Workshop 6: Unit tests, accent color picker, cloud tasks
+  - Workshop 7: Agents, skills, hooks, and the Claude Agent SDK
+  - Workshop 8: Deployment and release"
 ```
 
 5. Review the PR on GitHub and merge:
@@ -498,7 +498,7 @@ Beyond code, Claude Desktop's Cowork feature handles knowledge work — generati
 
 ### Certification Pathway
 
-If you want to take your Claude skills to the professional level, consider the Claude Certified Architect — Foundations certification. Throughout this course, you have touched all five exam domains: agentic architecture (Session 7), tool design and MCP (Session 5), Claude Code configuration (Session 4), prompt engineering (Sessions 5-6), and context management (Sessions 4 and 7). The exam guide is available in our `docs/` folder.
+If you want to take your Claude skills to the professional level, consider the Claude Certified Architect — Foundations certification. Throughout this course, you have touched all five exam domains: agentic architecture (Workshop 7), tool design and MCP (Workshop 5), Claude Code configuration (Workshop 4), prompt engineering (Workshops 5-6), and context management (Workshops 4 and 7). The exam guide is available in our `docs/` folder.
 
 ---
 

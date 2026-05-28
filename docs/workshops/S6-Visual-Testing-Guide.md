@@ -1,4 +1,4 @@
-# Session 6 Reference: Visual Testing with Playwright
+# Workshop 6 Reference: Visual Testing with Playwright
 
 **What this covers:** Why visual testing matters for AI-assisted development, how to use Playwright MCP for screenshots, and when to use visual testing vs other testing methods.
 

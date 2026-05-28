@@ -1,10 +1,10 @@
 <!-- ============================================================
-  CLAUDE.md Template — Session 4: Multi-File Apps and CLAUDE.md
+  CLAUDE.md Template — Workshop 4: Multi-File Apps and CLAUDE.md
   Mastering Claude Code: From Zero to Full Stack AI Developer
 
   WHAT IS THIS FILE?
   This is a template for creating your own CLAUDE.md file. During
-  the Session 4 workshop, you will copy this template into your
+  the Workshop 4, you will copy this template into your
   project root and customize it for your LifeOps Command Center app.
 
   WHY DOES IT MATTER?
@@ -49,7 +49,7 @@
 [Describe your project here. What does it do? Who is it for?]
 
 **Tech stack**: [e.g., React, TypeScript, Vite, Tailwind CSS]
-**Status**: [e.g., In development, Session 4 milestone]
+**Status**: [e.g., In development, Workshop 4 milestone]
 
 ## Repository Structure
 
@@ -148,20 +148,20 @@ npm run lint
 - Use environment variables for all external service configuration
 - Always validate user input before processing it
 
-## Session Progress
+## Workshop Progress
 
 <!-- HINT: Update this section as you complete each session.
      It helps Claude understand what has been built so far
      and what stage the project is at. -->
 
-- [x] Session 1: Static landing page (HTML + CSS)
-- [x] Session 2: Dev environment setup
-- [x] Session 3: Contacts + tasks with Git workflow
-- [ ] Session 4: Multi-file React architecture with CLAUDE.md
-- [ ] Session 5: External data integrations (weather, APIs)
-- [ ] Session 6: Unit tests + mobile control
-- [ ] Session 7: Agents, skills, and automation
-- [ ] Session 8: Deploy to production
+- [x] Workshop 1: Static landing page (HTML + CSS)
+- [x] Workshop 2: Dev environment setup
+- [x] Workshop 3: Contacts + tasks with Git workflow
+- [ ] Workshop 4: Multi-file React architecture with CLAUDE.md
+- [ ] Workshop 5: External data integrations (weather, APIs)
+- [ ] Workshop 6: Unit tests + mobile control
+- [ ] Workshop 7: Agents, skills, and automation
+- [ ] Workshop 8: Deploy to production
 
 <!-- ============================================================
   MODULAR CONFIGURATION (Advanced)
@@ -182,7 +182,7 @@ npm run lint
   ---
   Rules here only load when editing test files.
 
-  See the Session 4 speaker script for full details on the hierarchy.
+  See the Workshop 4 speaker script for full details on the hierarchy.
 ============================================================ -->
 
 <!-- ============================================================
@@ -196,7 +196,7 @@ npm run lint
   [ ] Added any project-specific Behavioral Rules
   [ ] Verified the Build & Test commands match your setup
   [ ] Customized the Code Conventions to your preferences
-  [ ] Updated Session Progress to reflect your current stage
+  [ ] Updated Workshop Progress to reflect your current stage
 
   TIPS FOR GETTING THE MOST OUT OF CLAUDE.md:
   - Be specific: "Use Tailwind CSS" is better than "Use a CSS framework"

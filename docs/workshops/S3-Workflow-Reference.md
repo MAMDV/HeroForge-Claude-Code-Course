@@ -2,7 +2,7 @@
 
 **The 5-step workflow for building with Claude Code**
 
-Use this cycle every time you build a feature, fix a bug, or make a change. It applies from Session 3 onward and mirrors how professional developers work with AI tools.
+Use this cycle every time you build a feature, fix a bug, or make a change. It applies from Workshop 3 onward and mirrors how professional developers work with AI tools.
 
 ---
 
@@ -143,4 +143,4 @@ Plan how to structure these components.
 
 ---
 
-*This reference card is part of the Mastering Claude Code course, Session 3 onward.*
+*This reference card is part of the Mastering Claude Code course, Workshop 3 onward.*

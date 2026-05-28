@@ -1,4 +1,4 @@
-# Session 8 Reference: CI/CD Integration with Claude Code
+# Workshop 8 Reference: CI/CD Integration with Claude Code
 
 This reference covers using Claude Code in automated pipelines — CI/CD workflows, git hooks, and scripted review processes.
 

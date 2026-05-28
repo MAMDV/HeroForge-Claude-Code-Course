@@ -1,5 +1,5 @@
 # Mastering Claude Code: From Zero to Full Stack AI Developer
-## Session 1 Workshop: Your First AI-Built Web Page
+## Workshop 1: Your First AI-Built Web Page
 
 **Estimated Time:** 45 minutes
 **Difficulty:** Beginner (no coding experience required)
@@ -82,9 +82,9 @@ Instead of trying to describe your entire web page in one giant message, you bui
 
 > **What is Claude Code Web?** It is a browser-based coding environment powered by Claude. You type what you want in plain English, and Claude writes the code, creates the files, and lets you preview or download the result. No installation required.
 
-> **Context Window Awareness:** You may notice a token counter in the Claude Code Web interface. Every conversation with Claude has a budget -- think of it as a word limit that covers everything you type and everything Claude writes back. You do not need to manage it today, but it is good to know it exists. You will learn how to work with this budget effectively in Session 4.
+> **Context Window Awareness:** You may notice a token counter in the Claude Code Web interface. Every conversation with Claude has a budget -- think of it as a word limit that covers everything you type and everything Claude writes back. You do not need to manage it today, but it is good to know it exists. You will learn how to work with this budget effectively in Workshop 4.
 
-> **Model Selection:** Claude Code Web uses a model called Sonnet by default, which balances speed and quality well for most tasks. There are also faster options (Haiku) and more powerful options (Opus) available. You will learn when to use each model in Session 4 -- for now, Sonnet is the right choice.
+> **Model Selection:** Claude Code Web uses a model called Sonnet by default, which balances speed and quality well for most tasks. There are also faster options (Haiku) and more powerful options (Opus) available. You will learn when to use each model in Workshop 4 -- for now, Sonnet is the right choice.
 
 ---
 
@@ -469,7 +469,7 @@ By completing this workshop, you have learned:
 
 ## What Comes Next
 
-In **Session 2: Setting Up Your Dev Environment**, you will:
+In **Workshop 2: Setting Up Your Dev Environment**, you will:
 - Install development tools on your computer (VS Code, terminal basics)
 - Learn what a terminal is and how to run simple commands
 - Set up your local development environment
@@ -477,9 +477,9 @@ In **Session 2: Setting Up Your Dev Environment**, you will:
 
 **Preparation:**
 1. Make sure you have your downloaded zip file from today's session saved somewhere you can find it
-2. If you have a GitHub account, great -- if not, you will create one in Session 2
+2. If you have a GitHub account, great -- if not, you will create one in Workshop 2
 
-See you in Session 2!
+See you in Workshop 2!
 
 ---
 

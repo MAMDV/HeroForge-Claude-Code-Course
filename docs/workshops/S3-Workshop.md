@@ -1,9 +1,9 @@
-# LifeOps Command Center: Session 3 Workshop
+# LifeOps Command Center: Workshop 3
 ## Real Projects, Real Git
 
 **Estimated Time:** 45 minutes
 **Difficulty:** All Levels (beginner + experienced merge here)
-**Prerequisites:** Completed Sessions 1-2 (personal landing page, dev environment setup)
+**Prerequisites:** Completed Workshops 1-2 (personal landing page, dev environment setup)
 **Surface:** VS Code (GitHub Codespace)
 
 ---
@@ -79,7 +79,7 @@ lifeops-command-center/
 
 **Task:** Open `src/App.jsx` in the editor. Read through it. This is the main component you will be modifying today.
 
-> **About the `.claude/` folder:** The starter app includes a `.claude/` folder with a basic `CLAUDE.md` file. This is where Claude Code's project configuration lives. In Session 4, we will build this out with custom commands and project rules. For now, just know it exists -- it is how Claude Code learns your project's conventions.
+> **About the `.claude/` folder:** The starter app includes a `.claude/` folder with a basic `CLAUDE.md` file. This is where Claude Code's project configuration lives. In Workshop 4, we will build this out with custom commands and project rules. For now, just know it exists -- it is how Claude Code learns your project's conventions.
 
 ### Exercise 1.2 — Check Git Status
 
@@ -293,7 +293,7 @@ claude "Add a consistent color scheme and hover effects to all card components a
 
 ---
 
-## Session 3 Recap
+## Workshop 3 Recap
 
 By completing this workshop, you have:
 
@@ -312,4 +312,4 @@ By completing this workshop, you have:
 - Cross-component data relationships (tasks assigned to contacts)
 
 ### What's Next
-**Session 4: Multi-File Apps and CLAUDE.md** — Refactor your components into a cleaner architecture and learn how CLAUDE.md gives Claude Code persistent project context.
+**Workshop 4: Multi-File Apps and CLAUDE.md** — Refactor your components into a cleaner architecture and learn how CLAUDE.md gives Claude Code persistent project context.

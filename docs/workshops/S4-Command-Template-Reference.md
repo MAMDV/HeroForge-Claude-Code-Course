@@ -1,6 +1,6 @@
-# Custom Command Template Reference — Session 4 Reference
+# Custom Command Template Reference — Workshop 4 Reference
 
-**Session**: 4 of 8
+**Workshop**: 4 of 8
 **Topic**: Building custom slash commands for Claude Code
 
 ---

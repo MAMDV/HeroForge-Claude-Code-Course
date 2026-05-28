@@ -1,4 +1,4 @@
-# Session 7 Reference: Hooks and Security
+# Workshop 7 Reference: Hooks and Security
 
 **Purpose:** Quick reference for pre-tool-use and post-tool-use hooks, pattern matcher syntax, three protection tiers, patterns.yaml format, and common security hook recipes.
 

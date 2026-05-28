@@ -1,4 +1,4 @@
-# Session 7 Reference: Skills
+# Workshop 7 Reference: Skills
 
 **Purpose:** Quick reference for skills vs commands, SKILL.md structure, trigger words, invocation methods, configuration options, and where to find community skills.
 

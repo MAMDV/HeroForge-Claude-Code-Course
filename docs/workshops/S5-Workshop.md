@@ -1,9 +1,9 @@
 # HeroForge.AI Course: Mastering Claude Code
-## Session 5 Workshop: Connecting to the Outside World
+## Workshop 5: Connecting to the Outside World
 
 **Estimated Time:** 45-60 minutes
 **Difficulty:** Intermediate
-**Prerequisites:** Completed Sessions 1-4 (Dev environment, Git workflow, multi-file React architecture)
+**Prerequisites:** Completed Workshops 1-4 (Dev environment, Git workflow, multi-file React architecture)
 
 ---
 
@@ -453,9 +453,9 @@ Learn to manage loaded MCP servers to conserve your context window budget.
 claude "How much context window space do my currently loaded MCP tools consume? What happens if I disable the ones I'm not using right now?"
 ```
 
-### Connection to Session 4
+### Connection to Workshop 4
 
-Remember "Context is currency" from Session 4. Your 200K token context window is shared between CLAUDE.md, MCP tool definitions, and your conversation. Managing loaded MCPs is one of the easiest ways to reclaim context space when you are working on tasks that do not need external integrations.
+Remember "Context is currency" from Workshop 4. Your 200K token context window is shared between CLAUDE.md, MCP tool definitions, and your conversation. Managing loaded MCPs is one of the easiest ways to reclaim context space when you are working on tasks that do not need external integrations.
 
 ### Checkpoint
 - [ ] You used `/mcp` to review loaded servers
@@ -550,4 +550,4 @@ In this workshop, you built three types of external integrations and learned pro
 - `docs/workshops/templates/S5-MCP-Security-Checklist.md` — Student quick reference
 - `docs/workshops/templates/S5-Structured-Output-Reference.md` — Structured output and few-shot reference
 
-**Next Session:** Session 6 — Cloud Tasks and Mobile Control (unit tests + Remote Control)
+**Next Workshop:** Workshop 6 — Cloud Tasks and Mobile Control (unit tests + Remote Control)
