@@ -127,7 +127,7 @@ The course is organized into **4 Lessons**, each made up of hands-on workshops.
 | # | Title | What You'll Build |
 |---|-------|-------------------|
 | 1 | Your First AI-Built Web Page | Static personal landing page in Claude Code Web |
-| 2 | Setting Up Your Dev Environment | Local terminal + VS Code, first `hello.txt` |
+| 2 | Setting Up Your Dev Environment | GitHub Codespace terminal, first `hello.txt` |
 
 ### Lesson 2: Building Real Apps
 
