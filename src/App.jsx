@@ -2,9 +2,6 @@ import { useAppContext } from './context/AppContext';
 import { motion, AnimatePresence } from 'motion/react';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
-import ContactList from './components/ContactList';
-import TaskList from './components/TaskList';
-import NoteList from './components/NoteList';
 import PersonalizationPanel from './components/PersonalizationPanel';
 import AboutPage from './components/AboutPage';
 import ToastProvider from './components/ToastProvider';
@@ -15,9 +12,6 @@ function App() {
 
   const views = {
     dashboard: <Dashboard />,
-    contacts: <ContactList />,
-    tasks: <TaskList />,
-    notes: <NoteList />,
     settings: <PersonalizationPanel />,
     about: <AboutPage />,
   };
