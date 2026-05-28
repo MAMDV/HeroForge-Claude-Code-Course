@@ -1,187 +1,191 @@
 # Mastering Claude Code — Course Repo
 
+by [HeroForge.AI](https://heroforge.ai)
+
 The student repo for **Mastering Claude Code: From Zero to Full Stack AI Developer**.
 
-Across the course's hands-on sessions, you'll build and deploy a personal productivity dashboard — with contacts, tasks, notes, and live data integrations — using Claude Code and natural language.
+Across the course's hands-on workshops, you'll build and deploy a personal productivity dashboard — with contacts, tasks, notes, and live data integrations — using Claude Code and natural language.
 
 ---
 
 ## Getting Started
 
-No setup, no installs — you'll be writing code in your browser in about 60 seconds.
+This course runs entirely in **GitHub Codespaces** — a full code editor and Linux machine that GitHub spins up for you in the cloud, on demand, in your browser. There's nothing to install on your laptop. You'll be writing code in about 5 minutes.
 
-> ⚠️ **Heads up: Claude Code can read, create, edit, and delete files on whatever machine it's running on.** That's what makes it useful — but it also means you should only point it at projects and folders you're comfortable letting it change. For this course, **we recommend running Claude Code in a GitHub Codespace** (a disposable cloud environment — nothing on your laptop is touched) **or on a dedicated computer** you don't mind it making changes to. If you do run it locally, work inside this course's folder, keep your work committed to Git so you can always roll back, and review changes before approving them.
+> ⚠️ **Why Codespaces (and why no local install yet)?** Claude Code can read, create, edit, and delete files in whatever environment it's running in. Running it inside a Codespace keeps it sandboxed in a disposable cloud machine — nothing on your laptop is ever touched. We'll cover local installation in a later workshop, once you're comfortable with the tools. If you want a head start on the local setup, see [README-local.md](./README-local.md) — but it's not needed for the course itself.
 
-### 1. Clone the Repository
+### 1. Create your own copy of the course from a template
 
-"Cloning" just means making your own copy of this project so you can work on it without affecting anyone else's code. Think of it like photocopying a workbook — you get your own version to write in.
+This repo is set up as a **template repository** — that means each student creates their own copy in their own GitHub account. Your copy is yours: commit, push, break things, all without affecting anyone else.
 
-You have two options:
+1. Go to the course repo on GitHub: [https://github.com/MAMDV/HeroForge-Claude-Code-Course](https://github.com/MAMDV/HeroForge-Claude-Code-Course)
+2. Click the green **`Use this template`** button near the top right of the page.
+3. Choose **`Create a new repository`**.
+4. Fill in the form:
+   - **Owner:** your own GitHub username
+   - **Repository name:** anything you like — e.g. `my-claude-code-course`
+   - **Visibility:** Private is recommended (Public is fine too)
+5. Click **`Create repository from template`**.
+6. Wait a few seconds. GitHub will redirect you to your new repo once it's ready. The URL will look like `https://github.com/YOUR-USERNAME/my-claude-code-course` — confirm it says **your** username, not `MAMDV`.
 
-**Option A: Use GitHub Codespaces (recommended for beginners — nothing to install)**
+> 💡 **What's a template?** A template repository is a normal GitHub repo with one setting flipped. Clicking "Use this template" copies the whole project — files and history — into your own account. Unlike a *fork*, a template copy is a clean break: there's no "send a pull request back to the original" relationship, just your own standalone repo.
 
-1. Go to the repository page on GitHub.
-2. Click the green **`Code`** button near the top of the page.
-3. Choose the **`Codespaces`** tab.
-4. Click **`Create codespace on main`**.
+### 2. Open your copy in a Codespace
 
-That's it — GitHub will open a full code editor right in your browser with everything ready to go. Continue to **Step 2** below.
+Make sure you're looking at **your own copy** (the URL should start with `https://github.com/YOUR-USERNAME/...`), then:
 
-**Option B: Clone to your own computer (if you prefer working locally)**
+1. Click the green **`Code`** button.
+2. Choose the **`Codespaces`** tab.
+3. Click **`Create codespace on main`**.
 
-If you already have Git installed on your computer, open a terminal and run:
+GitHub opens a full VS Code editor right in your browser, running on a Linux machine in the cloud. Everything you need to follow the course lives in this Codespace.
+
+> 💡 **Codespaces auto-suspend after 30 minutes idle** to save your free hours. When you come back, just reopen the Codespace from the **Code → Codespaces** tab — your work is saved exactly as you left it.
+
+### 3. Create your own work branch
+
+In the Codespace, look for the **Terminal** panel at the bottom of the screen. (If you don't see it, click the `Terminal` menu at the top and choose `New Terminal`.)
+
+In the terminal, run:
 
 ```bash
-git clone https://github.com/MAMDV/HeroForge-Claude-Code-Course.git
-cd HeroForge-Claude-Code-Course
+git checkout -b yourname-workshop-1
 ```
 
-The first command downloads the project to your computer. The second command moves you into the project folder so you're ready to work. Continue to **Step 2** below.
+Replace `yourname` with your actual name — for example, `git checkout -b alex-workshop-1`. This gives you a safe space to experiment while keeping `main` clean.
 
-### 2. Create Your Own Branch
+> 💡 **What's a branch?** A branch is a separate line of changes inside the same project. You can edit freely on your branch, and the original code on `main` stays exactly as it was until you choose to bring your changes back in.
 
-This step applies to **both Option A and Option B** — whether you're in a Codespace or working locally.
+### 4. Install Claude Code
 
-Before you start making changes, create your own branch so your work stays separate from the main copy. In your terminal, run:
-
-```bash
-git checkout -b yourname-session-1
-```
-
-Replace `yourname` with your actual name — for example, `git checkout -b alex-session-1`. This gives you a safe space to experiment without worrying about breaking anything on the main branch.
-
-> 💡 **What's a branch?** A branch is like a separate copy of the project that lives inside the same folder. You can make all the changes you want on your branch, and the original code on `main` stays untouched.
-
-### 3. Install Claude Code
-
-Open a terminal. In a Codespace, look for the **Terminal** panel at the bottom of the screen — if you don't see it, click the `Terminal` menu at the top and choose `New Terminal`. On your own computer, open the Terminal app (macOS/Linux) or PowerShell (Windows).
-
-Pick the command that matches where you're working and paste it in, then press **Enter**.
-
-**macOS, Linux, or GitHub Codespaces** (Codespaces runs on Linux, so use this one):
+Still in the Codespace terminal, paste this in and press **Enter**:
 
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Windows — WSL** (Windows Subsystem for Linux — same as the Linux command):
+(Codespaces run on Linux, so this is the right command.)
 
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-**Windows — PowerShell**:
-
-```powershell
-irm https://claude.ai/install.ps1 | iex
-```
-
-**Windows — Command Prompt (CMD)**:
-
-```batch
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
-```
-
-> 💡 **Not sure if you're in PowerShell or CMD?** Look at your prompt. `PS C:\>` means PowerShell. `C:\>` (no `PS`) means CMD.
-
-> 💡 **Why not `npm install`?** The native installer above is the current recommended path — it's a self-contained download that doesn't need Node.js and updates itself automatically in the background. If you'd rather use Homebrew, WinGet, or another package manager, see the [official install docs](https://code.claude.com/docs/en/setup).
-
-Next, start Claude Code by running:
+Then start Claude Code so you can sign in:
 
 ```bash
 claude
 ```
 
-The first time you run this, Claude will walk you through signing in — follow the prompts to authenticate in your browser. Once you're logged in, your credentials are saved and you won't need to log in again.
+The first time you run this, Claude walks you through signing in — follow the prompts to authenticate in your browser. Once you're logged in, your credentials are saved and you won't be asked again.
 
-You can confirm the install worked at any time by checking the version number:
+You can confirm the install worked at any time by checking the version:
 
 ```bash
 claude --version
 ```
 
-If you see a version number (something like `2.x.x`), you're good to go. If you see "command not found", close and reopen your terminal so it picks up the new `claude` command, then try again.
+If you see something like `2.x.x`, you're good to go. If you see "command not found", close and reopen your terminal so it picks up the new `claude` command, then try again.
 
-### 4. Load the starting point for your session
+### 5. Create shortcuts
 
-Still in the terminal, type this command and press **Enter** to load the starting point for Session 1:
+These shortcuts save you from typing long commands every time. Paste this into your Codespace terminal:
 
 ```bash
-git checkout S1-start
+echo -e "alias dsp='claude --dangerously-skip-permissions'\nalias dsp-c='claude --dangerously-skip-permissions -c'" >> ~/.bashrc
 ```
 
-> 💡 **What does `git checkout` do?** It's how you tell Git which version of the code to show you. Every session has a `-start` branch with the code exactly as it looks at the beginning of that session. To load a different session, swap in its number — for example, `git checkout S4-start` loads the beginning of Session 4.
+Then reload your shell config so the shortcuts are available immediately:
 
-### 5. Follow the workshop guide
+```bash
+source ~/.bashrc
+```
 
-Each session has a step-by-step guide in [`docs/workshops/`](./docs/workshops/). Open the one that matches your session and follow along.
+This creates two shortcuts:
+
+| Shortcut | What It Does |
+|----------|--------------|
+| `dsp` | Starts Claude Code without asking permission for every action (needed for agent workflows) |
+| `dsp-c` | Same as above, but resumes your last session so it remembers what you were working on |
+
+> ⚠️ **Security note:** The `--dangerously-skip-permissions` flag lets Claude run commands without asking you to approve each one. This is safe inside a Codespace (it's a throwaway cloud machine you fully control), but be very cautious if you ever use this flag on your own computer.
+
+### 6. Follow the workshop guide
+
+Each workshop has a step-by-step guide in [`docs/workshops/`](./docs/workshops/). Open the one that matches your workshop and follow along.
 
 ---
 
-**Which session should I start with?**
+**Which workshop should I start with?**
 
-- **Brand new to coding?** Start at **Session 1**. Sessions 1 and 2 are built for total beginners.
-- **Already comfortable with a terminal, Git, and VS Code?** You can jump straight to **Session 3**, where the beginner and experienced tracks merge.
+- **Brand new to coding?** Start at **Workshop 1**. Workshops 1 and 2 are built for total beginners.
+- **Already comfortable with a terminal, Git, and VS Code?** You can jump straight to **Workshop 3**, where the beginner and experienced tracks merge.
 
 ---
 
-## Session Breakdown
+## Workshop Breakdown
+
+The course is organized into **4 Lessons**, each made up of hands-on workshops.
+
+### Lesson 1: Foundations
 
 | # | Title | What You'll Build |
 |---|-------|-------------------|
 | 1 | Your First AI-Built Web Page | Static personal landing page in Claude Code Web |
 | 2 | Setting Up Your Dev Environment | Local terminal + VS Code, first `hello.txt` |
+
+### Lesson 2: Building Real Apps
+
+| # | Title | What You'll Build |
+|---|-------|-------------------|
 | 3 | Real Projects, Real Git | Contacts + task list, committed through a real Git workflow |
 | 4 | Multi-File Apps and CLAUDE.md | Refactor to a multi-file React app with persistent project context |
+
+### Lesson 3: Connecting & Mobile
+
+| # | Title | What You'll Build |
+|---|-------|-------------------|
 | 5 | Connecting to the Outside World | Live weather/data widget + GitHub MCP integration |
 | 6 | Cloud Tasks and Mobile Control | Unit tests + mobile-driven code change via Remote Control |
+
+### Lesson 4: Automate & Ship
+
+| # | Title | What You'll Build |
+|---|-------|-------------------|
 | 7 | Agents, Skills, and Automation | Sub-agents, agentic loops, security hooks, and custom Skills |
 | 8 | Ship It: Deploy and Present | Deploy to a live URL with a merged PR |
 | 9 | Make It Yours | UI redesign with CommandPalette, Motion animations, and the Frontend Design skill |
 
 ---
 
-## Branch Structure
+## Working on Your Branch
 
-Every session has three branches so you can jump in, peek ahead, or reset to a known good state:
+You'll do all your work on a branch named after you, like `alex-workshop-1`. As you move from one workshop to the next, you can either:
 
-| Branch | Use it when... |
-|--------|----------------|
-| `S{N}-start` | You want the session's starting point — same code the instructor begins with |
-| `S{N}-in-progress` | You got stuck partway and want a checkpoint mid-session |
-| `S{N}-complete` | You want the finished result to compare against or skip ahead from |
+- **Keep building on the same branch** (simplest — your work just accumulates), or
+- **Create a fresh branch for the new workshop** — for example, `git checkout -b alex-workshop-4` — so each workshop has its own clean history.
 
-Example — start Session 4:
-```bash
-git checkout S4-start
-```
-
-Peek at the finished Session 4 app:
-```bash
-git checkout S4-complete
-```
+Either way is fine. Everything stays inside your own template copy of the repo, so there's nothing to submit and nothing to break.
 
 ---
 
 ## Where to Find Things
 
-- **Workshop guides** (the step-by-step you'll follow each session) → [`docs/workshops/`](./docs/workshops/)
+- **Workshop guides** (the step-by-step you'll follow each workshop) → [`docs/workshops/`](./docs/workshops/)
 - **Reference materials and course outline** → [`docs/`](./docs/)
 - **App source code** → [`src/`](./src/)
+- **Local install instructions** (for using Claude Code on your own computer) → [`README-local.md`](./README-local.md)
 
 ---
 
 ## Prerequisites
 
 - A laptop with a modern web browser
-- A [Claude Pro or Max](https://claude.ai/upgrade) subscription (**Max recommended** for Session 6's Remote Control features)
+- A [Claude Pro or Max](https://claude.ai/upgrade) subscription (**Max recommended** for Workshop 6's Remote Control features)
 - A free [GitHub account](https://github.com/signup)
-- **No prior coding experience required** for the beginner track (Sessions 1–2)
+- **No prior coding experience required** for the beginner track (Workshops 1–2)
 
 ---
 
 ## License and Usage
 
 This repository is provided exclusively as companion material for enrolled students of the Mastering Claude Code course. You may view and run this code locally for your own learning. You may **not** redistribute, republish, sell, or use this code for any commercial purpose. Forks of this repository are permitted by GitHub's Terms of Service for personal reference only and do not grant any additional rights.
+
+Copyright (c) 2026 MAMD Ventures, LLC. Contact info@heroforge.ai
 
 See [LICENSE](./LICENSE) for full terms.
