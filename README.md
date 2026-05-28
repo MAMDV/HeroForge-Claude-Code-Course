@@ -1,6 +1,10 @@
 # Mastering Claude Code — Course Repo
 
+by [HeroForge.AI](https://heroforge.ai)
+
 The student repo for **Mastering Claude Code: From Zero to Full Stack AI Developer**.
+
+> **Proprietary course material — for enrolled students only.** Please do not redistribute or share outside the course.
 
 Across the course's hands-on sessions, you'll build and deploy a personal productivity dashboard — with contacts, tasks, notes, and live data integrations — using Claude Code and natural language.
 
@@ -157,3 +161,7 @@ git checkout S4-complete
 This repository is provided exclusively as companion material for enrolled students of the Mastering Claude Code course. You may view and run this code locally for your own learning. You may **not** redistribute, republish, sell, or use this code for any commercial purpose. Forks of this repository are permitted by GitHub's Terms of Service for personal reference only and do not grant any additional rights.
 
 See [LICENSE](./LICENSE) for full terms.
+
+Copyright (c) 2026 MAMD Ventures, LLC. All rights reserved.
+
+For licensing inquiries, contact [info@heroforge.ai](mailto:info@heroforge.ai).
