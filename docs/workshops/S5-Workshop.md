@@ -113,10 +113,10 @@ Learn to evaluate MCP servers before installing them using a 4-question checklis
 | 3 | Is the source code available? | Open source = inspectable, closed source = trust required |
 | 4 | What data does it access? | Read-only vs read-write, scope of access |
 
-2. Practice evaluating the GitHub MCP server:
+2. Practice evaluating an MCP you might actually install — a **Google Calendar MCP** server (you'll configure one in Exercise 9b):
 
 ```
-claude "Evaluate @modelcontextprotocol/server-github using these 4 questions: (1) Who published it? (2) What permissions does it need? (3) Is the source code available? (4) What data does it access?"
+claude "Evaluate a Google Calendar MCP server using these 4 questions: (1) Who published it? (2) What permissions does it need? (3) Is the source code available? (4) What data does it access?"
 ```
 
 3. Inspect your currently installed MCP servers:
@@ -131,7 +131,7 @@ See `docs/reference/mcp-security-checklist.md` for red flags, decision framework
 
 ### Checkpoint
 - [ ] You can name the 4 trustworthiness questions from memory
-- [ ] You evaluated the GitHub MCP server using the checklist
+- [ ] You evaluated a Google Calendar MCP server using the checklist
 - [ ] You used `/mcp` to inspect installed servers
 - [ ] You understand the difference between official and community servers
 
@@ -410,55 +410,106 @@ claude "Temporarily modify the weatherService to throw an error, then verify the
 
 ---
 
-## Exercise 9: MCP Configuration (5 minutes)
+## Exercise 9: Use GitHub from the Command Line (`gh`) (5 minutes)
 
 ### Goal
-Configure MCP servers using project-scoped and user-scoped settings, with environment variable expansion for credentials.
+Connect Claude to GitHub through the **GitHub CLI (`gh`)** — which is already installed and authenticated in your Codespace — instead of an MCP server.
+
+### Why CLI over MCP (when a CLI exists)
+
+> 💡 **If a CLI exists for a service, always prefer it in Claude Code — it's faster, more reliable, and already installed. MCP shines when you need the same connection to work across Claude chat, Claude Code, and other surfaces.**
+
+GitHub ships an excellent command-line tool, `gh`, and Codespaces comes with it pre-installed and already signed in. Claude Code can run `gh` directly — no extra server to install, no token wiring, and no context tokens spent on tool definitions. So for GitHub, reach for `gh`.
 
 ### Instructions
 
-1. Create a project-scoped `.mcp.json` in your project root:
+1. Confirm `gh` is installed and authenticated:
+
+```bash
+gh auth status
+```
+
+2. Ask Claude to read from GitHub using `gh`:
+
+```
+claude "Using the gh CLI, list the 5 most recent issues on this repository (run: gh issue list --limit 5) and summarize them."
+```
+
+3. Try a pull-request command too:
+
+```
+claude "Use gh to show the 5 most recent pull requests and their status (gh pr list --limit 5). Then tell me what's currently open."
+```
+
+4. Understand the difference:
+
+```
+claude "Explain the difference between our githubService.js (direct fetch inside the browser app) and using the gh CLI from Claude Code. When would I use each one?"
+```
+
+### Checkpoint
+- [ ] `gh auth status` shows you are logged in
+- [ ] Claude listed recent issues using `gh issue list`
+- [ ] Claude listed recent pull requests using `gh pr list`
+- [ ] You understand why a CLI is preferred over an MCP server when one already exists
+
+---
+
+## Exercise 9b: Configure a Real MCP — Google Calendar (7 minutes)
+
+### Goal
+Configure an MCP server for a service that has **no built-in CLI** — Google Calendar — and learn project-scoped vs user-scoped settings with environment variable expansion.
+
+### Why MCP here (and not a CLI)
+
+Google Calendar has no `gh`-style tool sitting in your Codespace, and you'll want the *same* calendar connection to work everywhere — Claude chat on your phone, Claude Code at your desk, and other surfaces. That's exactly what MCP is for: configure it once, use it across every Claude surface. It's also something you'd genuinely use day to day — *"what's on my calendar tomorrow?"*, *"find a free 30-minute slot this week"*, *"add a study block Friday at 4pm."*
+
+### Instructions
+
+1. Create a **user-scoped** MCP entry (your personal calendar belongs to you, not the shared repo). Add a Google Calendar server to `~/.claude.json`, or a project-scoped `.mcp.json` if your whole team shares a calendar:
 
 ```json
 {
   "mcpServers": {
-    "github": {
+    "google-calendar": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": ["-y", "@cocal/google-calendar-mcp"],
       "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+        "GOOGLE_OAUTH_CREDENTIALS": "${GOOGLE_OAUTH_CREDENTIALS}"
       }
     }
   }
 }
 ```
 
-Note: The `${GITHUB_TOKEN}` syntax references an environment variable — the actual token stays in your `.env` file, which is never committed. This keeps secrets out of version control while making the MCP configuration shareable with your team.
+Note: The `${GOOGLE_OAUTH_CREDENTIALS}` syntax references an environment variable — your real credentials stay in your `.env` file, which is never committed. This keeps secrets out of version control while making the configuration shareable.
+
+> ⚠️ **Vet it first.** Community MCP package names change, and this one connects to your real calendar. Before installing, run the server through the **4-question trustworthiness checklist from Exercise 2** (who publishes it? what permissions? source available? what data?) and confirm you're using a current, trusted package — replace the name above with the one you've vetted.
 
 2. Understand the two configuration scopes:
 
 | Scope | File | Shared? | Use case |
 |-------|------|---------|----------|
-| Project | `.mcp.json` (project root) | Yes, via Git | Team-shared servers (project API, database) |
-| User | `~/.claude.json` | No | Personal/experimental servers |
+| Project | `.mcp.json` (project root) | Yes, via Git | Team-shared servers (shared team calendar, project API) |
+| User | `~/.claude.json` | No | Personal servers (your own Google Calendar) |
 
-3. Test the MCP connection:
-
-```
-claude "Using the GitHub MCP server, list the 5 most recent issues on our repository"
-```
-
-4. Understand the difference:
+3. Test the connection — and notice this same MCP works in Claude chat *and* Claude Code:
 
 ```
-claude "Explain the difference between our githubService.js (direct fetch) and the GitHub MCP server. When would I use each one?"
+claude "Using the Google Calendar MCP, what's on my calendar tomorrow? Then find a free 30-minute slot this week."
+```
+
+4. Understand why this one is an MCP, not a CLI:
+
+```
+claude "Explain why the Google Calendar MCP works in both Claude chat and Claude Code, while the gh CLI only works where a terminal is available."
 ```
 
 ### Checkpoint
-- [ ] `.mcp.json` exists in project root with environment variable expansion
-- [ ] You understand project-scoped vs user-scoped MCP configuration
-- [ ] Claude can query GitHub through MCP
-- [ ] You understand when to use direct fetch vs MCP
+- [ ] An MCP entry exists with environment variable expansion (no raw credentials in the file)
+- [ ] You understand project-scoped vs user-scoped configuration and why a personal calendar is user-scoped
+- [ ] You vetted the calendar MCP with the 4-question checklist before connecting it
+- [ ] You can explain why MCP (not a CLI) fits a cross-surface service like Calendar
 
 ---
 
@@ -561,11 +612,15 @@ In this workshop, you built three types of external integrations and learned pro
 | Integration | Pattern | Service File | Component |
 |-------------|---------|-------------|-----------|
 | Weather | Direct Fetch | weatherService.js | WeatherWidget.jsx |
-| GitHub Activity | Direct Fetch + MCP | githubService.js | GitHubActivityWidget.jsx |
+| GitHub Activity | Direct Fetch | githubService.js | GitHubActivityWidget.jsx |
+| GitHub (read/query) | `gh` CLI from Claude Code | — | — |
+| Google Calendar | MCP server (cross-surface) | `.mcp.json` / `~/.claude.json` | — |
 | Smart Tasks | Local Parsing + Structured Output | taskParser.js | SmartTaskInput.jsx |
-| Google (Bonus) | Mock Service | googleService.js | GoogleWorkspaceWidget.jsx |
+| Google Workspace (Bonus) | Mock Service | googleService.js | GoogleWorkspaceWidget.jsx |
 
 **Key patterns learned:**
+- Preferring a CLI (`gh`) over MCP when one already exists — faster, more reliable, already installed
+- MCP for cross-surface services (Google Calendar works in Claude chat *and* Claude Code)
 - MCP security evaluation (4-question trustworthiness checklist)
 - Project-scoped `.mcp.json` vs user-scoped `~/.claude.json`
 - Environment variable expansion in MCP configuration
