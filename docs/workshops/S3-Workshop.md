@@ -23,18 +23,6 @@
 In the VS Code terminal (Ctrl + ` to open), run:
 
 ```bash
-# Verify Node.js
-node --version
-# Expected: v20.x.x
-
-# Verify npm
-npm --version
-# Expected: 10.x.x
-
-# Verify Git
-git --version
-# Expected: 2.x.x
-
 # Verify Claude Code
 claude --version
 

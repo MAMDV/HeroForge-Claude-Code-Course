@@ -33,9 +33,6 @@ By completing this workshop, you will:
 Before starting, verify your environment is ready:
 
 ```bash
-# Check Node.js version (should be v20+)
-node --version
-
 # Check that dependencies are installed
 npm list vitest
 npm list @testing-library/react

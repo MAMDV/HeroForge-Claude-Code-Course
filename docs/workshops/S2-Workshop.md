@@ -12,7 +12,7 @@
 By completing this workshop, you will:
 
 - [ ] Open and navigate a GitHub Codespace
-- [ ] Use basic terminal commands (`pwd`, `ls`, `node --version`, `npm --version`, `git --version`)
+- [ ] Use basic terminal commands (`pwd`, `ls`)
 - [ ] Configure Git with your identity
 - [ ] Navigate the VS Code interface (file explorer, editor, terminal panel)
 - [ ] Install Claude Code CLI globally using npm
@@ -97,35 +97,9 @@ ls
 **What it does:** Lists files and folders in your current directory.
 **Expected output:** You should see folders like `src`, `docs`, `tests`, and files like `package.json`
 
-### Step 5: Verify Node.js
+### Step 5: Configure Git
 
-```bash
-node --version
-```
-
-**Expected output:** `v20.x.x` (the exact number may vary)
-
-> **What is Node.js?** Node.js lets you run JavaScript outside of a web browser. Our app uses JavaScript, so we need Node.js installed.
-
-### Step 6: Verify npm
-
-```bash
-npm --version
-```
-
-**Expected output:** `10.x.x` (the exact number may vary)
-
-> **What is npm?** The Node Package Manager. It installs libraries — pre-built code that other developers have shared. Think of it as an app store for JavaScript code.
-
-### Step 7: Verify and Configure Git
-
-```bash
-git --version
-```
-
-**Expected output:** `git version 2.x.x`
-
-Now configure Git with your identity:
+Configure Git with your identity:
 
 ```bash
 git config --global user.name "Your Name"
@@ -149,28 +123,26 @@ git config --global user.email
 
 ### CHECKPOINT 2
 
-Run the following commands and confirm all produce output (no "command not found" errors):
+Confirm your Git identity is configured (no empty output):
 
 ```bash
-node --version
-npm --version
-git --version
 git config --global user.name
+git config --global user.email
 ```
 
-All four commands should produce output. If any shows an error, raise your hand.
+Both commands should print the values you just set. If either is empty, re-run the `git config --global` commands from Step 5.
 
 ---
 
 ## Part 3: VS Code Orientation (5 minutes)
 
-### Step 8: Explore the File Explorer
+### Step 6: Explore the File Explorer
 
 1. In the left sidebar, click the **Explorer** icon (top icon, looks like stacked files)
 2. Click on `package.json` to open it in the editor
 3. Notice how VS Code colors different parts of the file — this is called **syntax highlighting**
 
-### Step 9: Learn Key VS Code Features
+### Step 7: Learn Key VS Code Features
 
 | Feature | How to Access | What It Does |
 |---------|--------------|--------------|
@@ -180,7 +152,7 @@ All four commands should produce output. If any shows an error, raise your hand.
 | Save a file | `Ctrl+S` | Saves the current file |
 | Close a tab | `Ctrl+W` | Closes the current editor tab |
 
-### Step 10: Create a File Manually (Optional)
+### Step 8: Create a File Manually (Optional)
 
 Try creating a file using the terminal:
 
@@ -202,11 +174,11 @@ The file disappears from the File Explorer.
 
 ## Part 4: Install Claude Code CLI (5 minutes)
 
-### Step 11: Install Claude Code
+### Step 9: Install Claude Code
 
 Follow the install guide at https://code.claude.com/docs/en/quickstart
 
-### Step 12: Verify Claude Code
+### Step 10: Verify Claude Code
 
 ```bash
 claude --version
@@ -238,7 +210,7 @@ Still not working? Run `source ~/.bashrc` and try again.
 
 ## Part 5: Create hello.txt with Claude Code (10 minutes)
 
-### Step 13: Your First Claude Code Command
+### Step 11: Your First Claude Code Command
 
 This is the main event. Type exactly this in your terminal:
 
@@ -253,7 +225,7 @@ claude "Create a file called hello.txt with a welcome message that includes toda
 4. It asks for your permission to save (type `y` or press Enter to approve)
 5. The file appears in your project
 
-### Step 14: Verify the File
+### Step 12: Verify the File
 
 Check that the file was created:
 
@@ -265,7 +237,7 @@ cat hello.txt
 
 Also check the File Explorer — you should see `hello.txt` in the file list. Click it to view in the editor.
 
-### Step 14a: Check Your Token Usage
+### Step 12a: Check Your Token Usage
 
 Now that you've had your first Claude Code interaction, let's check how much of your context budget you've used. While Claude Code is still running, type:
 
@@ -277,7 +249,7 @@ You should see a token count showing how much of your context window has been us
 
 > **What are tokens?** Every message you send and every response Claude gives uses tokens from your context window — think of it like a budget. Right now you've barely used any. In Workshop 4, we'll learn strategies for managing this budget on larger projects. For now, just remember: `/context` shows your usage at any time.
 
-### Step 15: Modify the File with Claude Code
+### Step 13: Modify the File with Claude Code
 
 Now let's make a change using natural language:
 
@@ -293,7 +265,7 @@ cat hello.txt
 
 You should see the original content plus the new line.
 
-### Step 15a: Keyboard Shortcuts
+### Step 13a: Keyboard Shortcuts
 
 Now that you've used Claude Code a couple of times, here are shortcuts that will make you faster. These work whenever Claude Code is running in the terminal:
 
@@ -314,15 +286,12 @@ Run the complete environment verification:
 
 ```bash
 echo "=== Environment Verification ==="
-echo "Node.js: $(node --version)"
-echo "npm: $(npm --version)"
-echo "Git: $(git --version)"
 echo "Claude Code: $(claude --version 2>&1 | head -1)"
 echo "hello.txt exists: $(test -f hello.txt && echo 'YES' || echo 'NO')"
 echo "=== All checks complete ==="
 ```
 
-**All five checks should show values (no errors).** If hello.txt exists: YES, your dev environment is fully verified.
+**Both checks should show values (no errors).** If hello.txt exists: YES, your dev environment is fully verified.
 
 Congratulations — you've completed Workshop 2!
 
@@ -334,12 +303,11 @@ Congratulations — you've completed Workshop 2!
 |---------|-------|----------|
 | Codespace won't start | GitHub service issue | Wait 2 minutes and try again; or use a different browser |
 | Terminal not visible | Panel may be collapsed | Press `Ctrl+`` ` or go to Terminal > New Terminal |
-| `node --version` shows "not found" | Node not installed | Should not happen in Codespace; restart the Codespace |
 | Install problems | Setup issue | Follow the install guide at https://code.claude.com/docs/en/quickstart |
 | `claude` command not found after install | Shell not refreshed | Close terminal and open a new one, or run `source ~/.bashrc` |
 | Claude Code asks for API key | Key not configured | Ask instructor for temporary key, or set: `export ANTHROPIC_API_KEY=your-key` |
 | File Explorer doesn't show new file | VS Code lag | Click the refresh icon in the File Explorer, or wait a moment |
-| `git config` shows nothing | Not yet configured | Run the `git config --global` commands from Step 7 |
+| `git config` shows nothing | Not yet configured | Run the `git config --global` commands from Step 5 |
 
 ---
 
