@@ -193,6 +193,8 @@ npm install
 npm run build && npm test
 ```
 
+💡 Or just tell Claude: "Check out the PR branch locally so I can test it."
+
 ### Step 5: Request Changes or Approve
 
 - If changes are needed, comment on the PR with specific feedback and tag `@claude`
