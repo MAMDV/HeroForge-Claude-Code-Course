@@ -118,6 +118,8 @@ claude "Create a post-tool-use hook in .claude/settings.json that intercepts git
 git push --dry-run origin main
 ```
 
+💡 Or just tell Claude: "Do a dry-run push to main so I can confirm nothing is blocked."
+
 3. Verify the hook catches issues (optional test):
 
 ```
@@ -257,11 +259,15 @@ claude "Check for any uncommitted changes in the LifeOps project. If there are a
 git checkout -b release/v1.0.0
 ```
 
+💡 Or just tell Claude: "Create and switch to a new branch called release/v1.0.0."
+
 3. Push to the remote:
 
 ```bash
 git push -u origin release/v1.0.0
 ```
+
+💡 Or just tell Claude: "Push the release/v1.0.0 branch to GitHub and set it to track origin."
 
 4. Ask Claude to create the pull request:
 
@@ -284,6 +290,8 @@ claude "Create a pull request from release/v1.0.0 to main with:
 ```bash
 gh pr merge --squash --delete-branch
 ```
+
+💡 Or just tell Claude: "Merge the pull request with a squash and delete the branch afterward."
 
 ### Checkpoint
 - [ ] All changes are committed and pushed
@@ -353,12 +361,16 @@ git checkout main
 git pull origin main
 ```
 
+💡 Or just tell Claude: "Switch to the main branch and pull the latest changes."
+
 2. Create the release tag:
 
 ```bash
 git tag -a v1.0.0 -m "LifeOps Command Center v1.0.0 — first production release"
 git push origin v1.0.0
 ```
+
+💡 Or just tell Claude: "Push the v1.0.0 tag up to GitHub."
 
 3. Ask Claude to create GitHub release notes:
 
