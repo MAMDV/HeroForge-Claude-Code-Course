@@ -25,9 +25,6 @@ By completing this workshop, you will:
 Before starting, verify your environment is ready:
 
 ```bash
-# Check Node.js version (should be v20+)
-node --version
-
 # Check Claude Code is installed
 claude --version
 

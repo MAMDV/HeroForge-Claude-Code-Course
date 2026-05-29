@@ -33,10 +33,6 @@ By completing this workshop, you will:
 Before starting, verify your environment is ready:
 
 ```bash
-# Verify Node.js and npm
-node --version    # Should show v20.x.x
-npm --version     # Should show 10.x.x
-
 # Verify Claude Code CLI
 claude --version  # Should show a version number
 

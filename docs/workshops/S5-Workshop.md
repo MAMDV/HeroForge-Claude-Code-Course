@@ -30,8 +30,6 @@ By completing this workshop, you will:
 
 ```bash
 # Verify your dev environment is ready
-node --version        # Should show v20.x.x
-npm --version         # Should show 10.x.x
 claude --version      # Should show a version number
 npm run build         # Should succeed without errors
 ```
