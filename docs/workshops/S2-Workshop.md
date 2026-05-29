@@ -417,3 +417,5 @@ This is completely optional. We'll cover context management in depth in Workshop
 ## What's Next
 
 **Workshop 3: Real Projects, Real Git** — You'll start building the LifeOps Command Center app. You'll add contacts, tasks, and notes to a starter application using Claude Code, and learn the Git workflow for saving and sharing your changes. The beginner and experienced developer tracks merge from Workshop 3 onward — you're ready.
+
+> 💡 **Want to run Claude Code on your own computer instead of in Codespaces?** That's optional and not needed for the course, but if you'd like to try it, see [S2-Local-VS-Code-Guide.md](./S2-Local-VS-Code-Guide.md) — it walks through the local VS Code workflow (install steps live in [README-local.md](../../README-local.md)).

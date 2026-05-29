@@ -170,6 +170,7 @@ Either way is fine. Everything stays inside your own template copy of the repo, 
 - **Reference materials and course outline** → [`docs/`](./docs/)
 - **App source code** → [`src/`](./src/)
 - **Local install instructions** (for using Claude Code on your own computer) → [`README-local.md`](./README-local.md)
+- **Using Claude Code locally with VS Code** (optional day-to-day workflow guide) → [`docs/workshops/S2-Local-VS-Code-Guide.md`](./docs/workshops/S2-Local-VS-Code-Guide.md)
 
 ---
 
