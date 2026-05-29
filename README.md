@@ -8,6 +8,17 @@ Across the course's hands-on workshops, you'll build and deploy a personal produ
 
 ---
 
+## Recommended Setup: A Two-Screen Workflow
+
+For the best experience, use **two screens** (or two windows side by side):
+
+- **Screen 1 —** your workshop guide open in a browser (from [`docs/workshops/`](./docs/workshops/))
+- **Screen 2 —** your Codespace with VS Code open
+
+That way you can read the instructions on one screen and type or paste prompts straight into Claude Code on the other. 💡 Only have one screen? Use two browser tabs and switch between them.
+
+---
+
 ## Getting Started
 
 This course runs entirely in **GitHub Codespaces** — a full code editor and Linux machine that GitHub spins up for you in the cloud, on demand, in your browser. There's nothing to install on your laptop. You'll be writing code in about 5 minutes.
