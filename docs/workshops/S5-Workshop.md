@@ -42,6 +42,18 @@ You will need:
 
 ---
 
+## What Is an Environment Variable?
+
+Before we create one, here is the idea in plain English.
+
+An **environment variable** is a way to store a secret — like an API key — *outside* your code. Your app reads it when it runs, but it never appears in the files you commit to Git.
+
+> 💡 **Think of it like a locked drawer.** Your app has the key and can open the drawer to grab what it needs (your API key). Git can see that the drawer exists, but it can never look inside — so your secrets never end up in your repository or on GitHub.
+
+In this project, secrets live in a file called `.env` (which is listed in `.gitignore`, so Git ignores it). Your code refers to them *by name* — for example `VITE_WEATHER_API_KEY` — instead of containing the actual key.
+
+---
+
 ## Exercise 1: Environment Variables Setup (5 minutes)
 
 ### Goal
@@ -72,6 +84,16 @@ grep ".env" .gitignore
 - [ ] `.env.example` exists with placeholder values
 - [ ] `.env` exists with your real API keys (never committed)
 - [ ] `.gitignore` includes `.env`
+
+---
+
+## What Is MCP?
+
+**MCP (Model Context Protocol)** is a standard way to connect Claude to external services and tools — like GitHub, a database, or your file system.
+
+> 💡 **Think of it like a USB port for Claude.** USB is one standard plug shape that works with keyboards, drives, cameras, and more. MCP is that standard "plug shape" for Claude: connect a service once using MCP, and Claude can use it — no custom glue code needed for each one.
+
+Over the next few exercises you will evaluate, configure, and use MCP servers.
 
 ---
 
@@ -229,6 +251,18 @@ claude "Create src/components/SmartTaskInput.jsx with a text input and live prev
 - [ ] `src/components/SmartTaskInput.jsx` shows live preview
 - [ ] Preview updates on every keystroke
 - [ ] "Add Task" button returns parsed task object
+
+---
+
+## What Is Structured Output?
+
+Sometimes you do not just want Claude to *write* an answer — you want data in an exact shape your code can use, every single time.
+
+**Structured output** means Claude returns data that follows a predefined structure (a JSON "schema") instead of free-form text. Behind the scenes this uses a feature called **`tool_use`**: you describe a "tool" with the exact fields you expect, and Claude fills them in.
+
+> 💡 **The difference:** asking Claude for JSON inside a normal text reply *usually* works — but it might add a sentence first, format a date differently, or skip a field. Structured output guarantees the response matches your schema, so your code can rely on it without fragile text-parsing.
+
+Here is how it works.
 
 ---
 
