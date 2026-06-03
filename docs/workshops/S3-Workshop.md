@@ -10,7 +10,7 @@
 
 ## Pre-Workshop Setup (REQUIRED)
 
-### Open the LifeOps Starter Repo in a Codespace
+### Open the course repo (HeroForge-Claude-Code-Course) in a Codespace
 
 1. Navigate to the course repository on GitHub
 2. Click the green **Code** button
@@ -57,11 +57,15 @@ This is not just a course workflow -- it is how professional developers work wit
 Open the file explorer in VS Code and familiarize yourself with the starter app:
 
 ```
-lifeops-command-center/
+HeroForge-Claude-Code-Course/
   src/
     components/     # Your new features go here
+    data/           # Sample JSON data (contacts, tasks, notes)
     App.jsx         # Main application component
     main.jsx        # Entry point
+    index.css       # Global styles
+  docs/             # Course documentation and workshops
+  index.html        # App entry HTML
   package.json      # Dependencies and scripts
 ```
 
@@ -77,6 +81,8 @@ Ask Claude Code about the current state of your project:
 claude "What branch am I on and what is the git status of this project?"
 ```
 
+💡 Or just tell Claude inside dsp: "What branch am I on, and is my working tree clean?"
+
 **Expected result:** You should be on the `main` branch with a clean working tree.
 
 ### Exercise 1.3 — Create a Feature Branch
@@ -84,10 +90,12 @@ claude "What branch am I on and what is the git status of this project?"
 Create a new branch for today's work:
 
 ```bash
-claude "Create a new git branch called session-3-features"
+claude "Create a new git branch called yourname-workshop-3"
 ```
 
-**Verification:** Look at the bottom-left corner of VS Code. It should show `session-3-features` instead of `main`.
+💡 Or just tell Claude inside dsp: "Make a new branch called yourname-workshop-3"
+
+**Verification:** Look at the bottom-left corner of VS Code. It should show `yourname-workshop-3` instead of `main`.
 
 ---
 
@@ -119,6 +127,8 @@ claude "Create a Contacts feature for the LifeOps Command Center app. Create the
 Use React useState to manage the contacts array. Add 3 sample contacts as default data. Use a clean card-based design."
 ```
 
+💡 Or just tell Claude inside dsp: "Build a Contacts feature in src/components/contacts/ with ContactList, ContactCard, and AddContactForm components, using React useState and 3 sample contacts in a clean card design."
+
 **Verification checklist:**
 - [ ] `src/components/contacts/ContactList.jsx` exists
 - [ ] `src/components/contacts/ContactCard.jsx` exists
@@ -141,6 +151,8 @@ claude "Create a Tasks feature in src/components/tasks/ with these components:
 Include 3-4 sample tasks as default data. Connect the contact dropdown to the contacts list."
 ```
 
+💡 Or just tell Claude inside dsp: "Build a Tasks feature in src/components/tasks/ with TaskList, TaskItem, and AddTaskForm, including 3-4 sample tasks and a contact dropdown linked to the contacts list."
+
 **Verification checklist:**
 - [ ] `src/components/tasks/TaskList.jsx` exists
 - [ ] `src/components/tasks/TaskItem.jsx` exists
@@ -162,6 +174,8 @@ claude "Create a Notes feature in src/components/notes/ with:
 Include 2-3 sample notes. Style the cards with subtle shadows and rounded corners."
 ```
 
+💡 Or just tell Claude inside dsp: "Build a Notes feature in src/components/notes/ with NoteList, NoteCard, and AddNoteForm, plus 2-3 sample notes styled as cards with subtle shadows and rounded corners."
+
 **Verification checklist:**
 - [ ] `src/components/notes/NoteList.jsx` exists
 - [ ] `src/components/notes/NoteCard.jsx` exists
@@ -180,6 +194,8 @@ claude "Update src/App.jsx to:
 4. Default to the Contacts tab"
 ```
 
+💡 Or just tell Claude inside dsp: "Wire ContactList, TaskList, and NoteList into src/App.jsx with a three-tab navigation bar (Contacts, Tasks, Notes) that defaults to Contacts."
+
 **Verification:** Run `npm start` (or `npm run dev`) and open the app in your browser. You should see three tabs and be able to switch between Contacts, Tasks, and Notes.
 
 ---
@@ -194,6 +210,8 @@ See what Git knows about your work:
 claude "Show me a summary of all files we've added or changed on this branch"
 ```
 
+💡 Or just tell Claude inside dsp: "What files have I added or changed on this branch?"
+
 You should see approximately 10 files: 9 new component files and 1 modified `App.jsx`.
 
 ### Exercise 3.2 — Commit Your Work
@@ -204,11 +222,15 @@ Stage and commit all changes:
 claude "Stage all new and modified files, then commit with the message: Add contacts, tasks, and notes features with tab navigation"
 ```
 
+💡 Or just tell Claude inside dsp: "Stage and commit everything with the message: Add contacts, tasks, and notes features with tab navigation."
+
 **Verification:** Ask Claude Code to show the git log:
 
 ```bash
 claude "Show me the last git commit"
 ```
+
+💡 Or just tell Claude inside dsp: "Show me my most recent commit."
 
 You should see your commit message and the list of files.
 
@@ -219,6 +241,8 @@ Push your branch and create a PR:
 ```bash
 claude "Push this branch to GitHub and create a pull request titled 'Add contacts, tasks, and notes features' with a description listing what was added"
 ```
+
+💡 Or just tell Claude inside dsp: "Push this branch and open a pull request titled 'Add contacts, tasks, and notes features' that lists what was added."
 
 **Verification:** Open the PR link that Claude Code provides. You should see:
 - [ ] A clear title
@@ -233,11 +257,15 @@ Complete the workflow by merging:
 claude "Merge this pull request into main"
 ```
 
+💡 Or just tell Claude inside dsp: "Merge this pull request into main."
+
 Then switch back to main:
 
 ```bash
 claude "Switch to the main branch and pull the latest changes"
 ```
+
+💡 Or just tell Claude inside dsp: "Switch back to main and pull the latest changes."
 
 ---
 
@@ -250,20 +278,28 @@ If you finish early, try these extensions:
 claude "Add a search bar to ContactList that filters contacts by name or email as the user types"
 ```
 
+💡 Or just tell Claude inside dsp: "Add a live search bar to ContactList that filters contacts by name or email as I type."
+
 ### Bonus B: Add Task Filtering
 ```bash
 claude "Add filter buttons to TaskList so users can view All, Todo, In Progress, or Done tasks"
 ```
+
+💡 Or just tell Claude inside dsp: "Add All/Todo/In Progress/Done filter buttons to TaskList."
 
 ### Bonus C: Add Note Categories
 ```bash
 claude "Add a category field to notes (Personal, Work, Ideas) and add category filter tabs to NoteList"
 ```
 
+💡 Or just tell Claude inside dsp: "Add Personal/Work/Ideas categories to notes and category filter tabs to NoteList."
+
 ### Bonus D: Improve Styling
 ```bash
 claude "Add a consistent color scheme and hover effects to all card components across contacts, tasks, and notes"
 ```
+
+💡 Or just tell Claude inside dsp: "Give all the contact, task, and note cards a shared color scheme and hover effects."
 
 ---
 
@@ -272,7 +308,7 @@ claude "Add a consistent color scheme and hover effects to all card components a
 | Problem | Solution |
 |---------|----------|
 | `npm start` / `npm run dev` fails | Run `npm install` first, then try again |
-| "Branch already exists" error | Use a different name: `session-3-features-v2` |
+| "Branch already exists" error | Use a different name: `yourname-workshop-3-v2` |
 | Can't see new files in explorer | Click the refresh icon at the top of the file explorer |
 | Terminal not visible | Press Ctrl + ` or go to Terminal > New Terminal |
 | Components don't render | Check the browser console (F12) for errors; ask Claude Code to fix them |
