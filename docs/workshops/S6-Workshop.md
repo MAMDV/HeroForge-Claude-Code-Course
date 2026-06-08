@@ -510,12 +510,16 @@ If any of your tests failed during earlier exercises, practice the retry-with-er
 claude "That didn't work. Try again."
 ```
 
+💡 Or just tell Claude inside dsp: "That didn't work. Try again."
+
 **Good retry (do this):**
 ```
 claude "The test failed because ContactCard received undefined for
 the email prop. The error is on line 23 where you destructure
 props — you used 'mail' instead of 'email'. Fix the prop name."
 ```
+
+💡 Or just tell Claude inside dsp: "The ContactCard test failed because the component received undefined for the email prop — on line 23 you destructured 'mail' instead of 'email'. Fix the prop name."
 
 ### 11.2 Understand When Retries Work
 
