@@ -79,6 +79,8 @@ claude "Create a test setup file at src/test/setup.js that:
 4. Runs cleanup after each test"
 ```
 
+💡 Or just tell Claude inside dsp: "Set up a test file at src/test/setup.js that imports cleanup from Testing Library, imports afterEach and vi from Vitest, silences noisy console.error warnings, and runs cleanup after each test."
+
 **Expected result:** A file at `src/test/setup.js` with cleanup and console spy.
 
 ### 1.2 Configure Vitest
@@ -90,6 +92,8 @@ Verify your `vitest.config.js` includes the setup file:
 claude "Check that vitest.config.js has environment set to jsdom and
 setupFiles pointing to src/test/setup.js. Update it if needed."
 ```
+
+💡 Or just tell Claude inside dsp: "Check that vitest.config.js uses the jsdom environment and points setupFiles at src/test/setup.js, and fix it if it doesn't."
 
 ### 1.3 Verify the Setup
 
@@ -118,6 +122,8 @@ claude "Write Vitest tests for the ContactList component. Test that:
 Save to src/test/ContactList.test.jsx"
 ```
 
+💡 Or just tell Claude inside dsp: "Write Vitest tests for ContactList that check names render from an array of contacts, emails render for each, and an empty-state message shows when there are none — save them to src/test/ContactList.test.jsx."
+
 **What to verify:**
 - [ ] Test file created at `src/test/ContactList.test.jsx`
 - [ ] All three test cases pass
@@ -134,6 +140,8 @@ claude "Write Vitest tests for the TaskList component. Test that:
 Save to src/test/TaskList.test.jsx"
 ```
 
+💡 Or just tell Claude inside dsp: "Write Vitest tests for TaskList that check task titles render, completed tasks have a visual indicator, and the empty state works when no tasks are provided — save to src/test/TaskList.test.jsx."
+
 ### 2.3 NoteList Tests
 
 **Prompt:**
@@ -145,6 +153,8 @@ claude "Write Vitest tests for the NoteList component. Test that:
 Save to src/test/NoteList.test.jsx"
 ```
 
+💡 Or just tell Claude inside dsp: "Write Vitest tests for NoteList that check note content renders, timestamps show, and an empty-state message appears when there are no notes — save to src/test/NoteList.test.jsx."
+
 ### 2.4 StatCard Tests
 
 **Prompt:**
@@ -155,6 +165,8 @@ claude "Write Vitest tests for the StatCard component. Test that:
 3. Different label/value combinations work correctly
 Save to src/test/StatCard.test.jsx"
 ```
+
+💡 Or just tell Claude inside dsp: "Write Vitest tests for StatCard that check the label renders, the value renders, and different label/value combinations work — save to src/test/StatCard.test.jsx."
 
 **Checkpoint:** Run `npx vitest run` — all component tests should pass.
 
@@ -177,6 +189,8 @@ claude "Write Vitest tests for the taskParser service. Test that:
 Save to src/test/taskParser.test.js"
 ```
 
+💡 Or just tell Claude inside dsp: "Write Vitest tests for the taskParser service covering a simple task title, exclamation marks setting high priority, extracted natural-language dates, #tags being parsed, and empty strings returning a sensible default — save to src/test/taskParser.test.js."
+
 ### 3.2 SmartTaskInput Tests
 
 Test the SmartTaskInput component, which integrates with taskParser:
@@ -191,6 +205,8 @@ claude "Write Vitest tests for SmartTaskInput. Test that:
 Use userEvent from @testing-library/user-event for typing simulation.
 Save to src/test/SmartTaskInput.test.jsx"
 ```
+
+💡 Or just tell Claude inside dsp: "Write Vitest tests for SmartTaskInput that check the input renders, typing then pressing Enter creates a task, the input clears after submit, and the parsed task has the right title — use userEvent for typing and save to src/test/SmartTaskInput.test.jsx."
 
 **Checkpoint:** Run `npx vitest run` — all service and integration tests should pass.
 
@@ -212,6 +228,8 @@ Wrap test components in the AppContext provider.
 Save to src/test/AppContext.test.jsx"
 ```
 
+💡 Or just tell Claude inside dsp: "Write Vitest tests for AppContext that check the provider renders children, the default state is correct, and state updates reach consuming components — wrap the test components in the provider and save to src/test/AppContext.test.jsx."
+
 ### 4.2 useLocalStorage Tests
 
 Test the custom hook for localStorage persistence:
@@ -225,6 +243,8 @@ claude "Write Vitest tests for useLocalStorage. Test that:
 Use renderHook from @testing-library/react.
 Save to src/test/useLocalStorage.test.js"
 ```
+
+💡 Or just tell Claude inside dsp: "Write Vitest tests for useLocalStorage that check it returns the initial value when storage is empty, persists updates, and reads existing values — use renderHook and save to src/test/useLocalStorage.test.js."
 
 **Checkpoint:** All context and hook tests pass.
 
@@ -251,6 +271,8 @@ the selected color. All colors must have WCAG AA contrast ratio against
 white text. Save to src/components/AccentColorPicker.jsx"
 ```
 
+💡 Or just tell Claude inside dsp: "Build an AccentColorPicker at src/components/AccentColorPicker.jsx with six circular preset buttons — Ocean Blue #2563EB, Emerald Green #059669, Amber #D97706, Rose #E11D48, Violet #7C3AED, Slate #475569 — where clicking one updates the accent color in AppContext, persists to localStorage, shows a checkmark on the selected color, and every color meets WCAG AA contrast against white text."
+
 ### 5.2 Test the Color Picker
 
 **Prompt:**
@@ -261,6 +283,8 @@ claude "Write Vitest tests for AccentColorPicker. Test that:
 3. The selected color shows a visual indicator
 Save to src/test/AccentColorPicker.test.jsx"
 ```
+
+💡 Or just tell Claude inside dsp: "Write Vitest tests for AccentColorPicker that check all six swatches render, clicking one updates the selected color, and the selected color shows an indicator — save to src/test/AccentColorPicker.test.jsx."
 
 **Checkpoint:** The color picker renders and tests pass.
 
@@ -280,6 +304,8 @@ Test that:
 Use vi.mock to mock the global fetch function.
 Save to src/test/WeatherWidget.test.jsx"
 ```
+
+💡 Or just tell Claude inside dsp: "Write Vitest tests for WeatherWidget that mock the fetch API and check a loading state shows while fetching, weather renders after success, and an error message shows on failure — use vi.mock for global fetch and save to src/test/WeatherWidget.test.jsx."
 
 **Checkpoint:** WeatherWidget tests pass with mocked data.
 
@@ -306,6 +332,8 @@ claude "Look at the test coverage report and identify any components or
 services with less than 50% coverage. Suggest which tests to add."
 ```
 
+💡 Or just tell Claude inside dsp: "Look at the coverage report, find any components or services under 50% coverage, and suggest which tests to add."
+
 ---
 
 ## Exercise 8: Automating Quality with Hooks (5 minutes)
@@ -322,6 +350,8 @@ claude "Add a pre-commit validation hook to settings.json that runs
 npm test before any git commit command. If the tests fail, block
 the commit."
 ```
+
+💡 Or just tell Claude inside dsp: "Add a pre-commit validation hook to settings.json that runs npm test before any git commit and blocks the commit if the tests fail."
 
 The resulting `settings.json` should look like this:
 
@@ -382,6 +412,8 @@ With the Playwright MCP available, take a screenshot of your running app:
 claude "Take a screenshot of the LifeOps app running on localhost:5173"
 ```
 
+💡 Or just tell Claude inside dsp: "Take a screenshot of the LifeOps app running on localhost:5173."
+
 ### 9.2 Make a Visual Change
 
 Change the accent color using the color picker (or modify a CSS value directly).
@@ -393,6 +425,8 @@ Change the accent color using the color picker (or modify a CSS value directly).
 claude "Take another screenshot of the LifeOps app and compare it
 to the previous one. What visual differences do you see?"
 ```
+
+💡 Or just tell Claude inside dsp: "Take another screenshot of the LifeOps app and compare it to the previous one — what's different?"
 
 **What to verify:**
 - [ ] Before screenshot captured successfully
@@ -419,6 +453,8 @@ recurrence: 'weekly' and recurrenceDay: 'Monday'. Do NOT update
 the taskParser implementation yet."
 ```
 
+💡 Or just tell Claude inside dsp: "Add a test to taskParser.test.js that expects parsing 'Water plants every Monday' to return recurrence 'weekly' and recurrenceDay 'Monday' — but don't change the taskParser implementation yet."
+
 **Step 2 — Run the test and confirm it fails:**
 ```bash
 npx vitest run src/test/taskParser.test.js
@@ -429,6 +465,8 @@ npx vitest run src/test/taskParser.test.js
 claude "Here is the failing test output for recurring task parsing.
 Update taskParser to make this test pass."
 ```
+
+💡 Or just tell Claude inside dsp: "Here's the failing test output for recurring tasks — update taskParser so the test passes."
 
 **What to verify:**
 - [ ] Test was written before the implementation
@@ -446,6 +484,8 @@ claude "I want to add a calendar view to LifeOps that shows tasks
 and notes on their dates. Before you implement this, what questions
 do you have?"
 ```
+
+💡 Or just tell Claude inside dsp: "I want to add a calendar view to LifeOps that shows tasks and notes on their dates — before you build it, what questions do you have for me?"
 
 **What to observe:**
 - Claude asks about scope (tasks, notes, or both?)

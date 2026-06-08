@@ -67,6 +67,8 @@ Create a `.env` file to securely store API credentials.
 claude "Create a .env.example file with placeholder values for VITE_WEATHER_API_KEY and VITE_GITHUB_TOKEN. Also create a .env file with the same structure. Make sure .env is in .gitignore."
 ```
 
+💡 Or just tell Claude inside dsp: "Set up environment variables for me — make a .env.example with placeholders for VITE_WEATHER_API_KEY and VITE_GITHUB_TOKEN, create a matching .env, and add .env to .gitignore."
+
 2. Open the generated `.env` file and add your real API keys:
 
 ```
@@ -119,6 +121,8 @@ Learn to evaluate MCP servers before installing them using a 4-question checklis
 claude "Evaluate a Google Calendar MCP server using these 4 questions: (1) Who published it? (2) What permissions does it need? (3) Is the source code available? (4) What data does it access?"
 ```
 
+💡 Or just tell Claude inside dsp: "Help me decide whether a Google Calendar MCP server is safe to install — who publishes it, what permissions it needs, whether the source is public, and what data it can reach."
+
 3. Inspect your currently installed MCP servers:
 
 ```
@@ -127,7 +131,7 @@ claude "Evaluate a Google Calendar MCP server using these 4 questions: (1) Who p
 
 4. Review the full checklist reference:
 
-See `docs/reference/mcp-security-checklist.md` for red flags, decision framework, and periodic review guidance. A student quick reference is available at `docs/workshops/templates/S5-MCP-Security-Checklist.md`.
+See `docs/reference/mcp-security-checklist.md` for red flags, decision framework, and periodic review guidance. A student quick reference is available at `docs/workshops/S5-MCP-Security-Checklist.md`.
 
 ### Checkpoint
 - [ ] You can name the 4 trustworthiness questions from memory
@@ -150,11 +154,15 @@ Build a weather service that fetches live data and a React component that displa
 claude "Create src/services/weatherService.js that exports a getWeather(city) function. It should fetch current weather from OpenWeatherMap API using the VITE_WEATHER_API_KEY environment variable. Default city should be San Francisco. Return an object with temperature, description, humidity, and icon."
 ```
 
+💡 Or just tell Claude inside dsp: "Build a weather service at src/services/weatherService.js with a getWeather(city) function that pulls current conditions from OpenWeatherMap using my VITE_WEATHER_API_KEY, defaults to San Francisco, and returns temperature, description, humidity, and icon."
+
 2. Create the Weather Widget component:
 
 ```
 claude "Create src/components/WeatherWidget.jsx that uses the weatherService to display current weather. Include loading, error, and success states. Show temperature, weather description, humidity, and a weather icon. Style it as a dashboard card."
 ```
+
+💡 Or just tell Claude inside dsp: "Make a WeatherWidget component at src/components/WeatherWidget.jsx that uses the weather service, handles loading, error, and success states, and shows temperature, description, humidity, and an icon as a dashboard card."
 
 3. Test the widget:
 
@@ -169,6 +177,8 @@ Ask Claude to verify the implementation:
 ```
 claude "Review the WeatherWidget and weatherService for proper error handling, loading states, and environment variable usage"
 ```
+
+💡 Or just tell Claude inside dsp: "Review my WeatherWidget and weatherService — check the error handling, the loading states, and that the API key comes from an environment variable."
 
 ### Checkpoint
 - [ ] `src/services/weatherService.js` fetches from OpenWeatherMap
@@ -192,17 +202,23 @@ Build a GitHub activity feed that shows recent events for a user.
 claude "Create src/services/githubService.js that exports getGitHubActivity(username) function. Fetch recent events from GitHub API with optional token auth from VITE_GITHUB_TOKEN. Format events into readable strings like 'Pushed 3 commits to repo-name'. Return the 10 most recent events."
 ```
 
+💡 Or just tell Claude inside dsp: "Create src/services/githubService.js with a getGitHubActivity(username) function that fetches recent GitHub events (using VITE_GITHUB_TOKEN if it's set), formats them into readable lines like 'Pushed 3 commits to repo-name', and returns the 10 most recent."
+
 2. Create the GitHub Activity Widget:
 
 ```
 claude "Create src/components/GitHubActivityWidget.jsx that displays recent GitHub activity. If no token is configured, show a friendly setup message instead of an error. Include loading and error states. Each event should show the type, repo name, and timestamp."
 ```
 
+💡 Or just tell Claude inside dsp: "Make a GitHubActivityWidget component that lists recent GitHub activity, shows a friendly setup message when no token is configured, handles loading and error states, and displays each event's type, repo, and timestamp."
+
 3. Test with and without a token:
 
 ```
 claude "What happens if VITE_GITHUB_TOKEN is not set? Verify the GitHubActivityWidget handles this gracefully."
 ```
+
+💡 Or just tell Claude inside dsp: "What happens if VITE_GITHUB_TOKEN isn't set? Check that the GitHubActivityWidget handles that gracefully."
 
 ### Checkpoint
 - [ ] `src/services/githubService.js` fetches GitHub events
@@ -226,17 +242,23 @@ Build a natural language task parser and a Smart Task Input component with live 
 claude "Create src/services/taskParser.js that exports a parseTask(input) function. It should extract: title, dueDate (from keywords like 'tomorrow', 'by Friday', ISO dates), priority (from 'urgent', 'high priority', 'low priority'), and category (from #hashtags). Return a structured object."
 ```
 
+💡 Or just tell Claude inside dsp: "Create src/services/taskParser.js with a parseTask(input) function that pulls out the title, a due date from phrases like 'tomorrow' or 'by Friday', a priority from words like 'urgent' or 'low priority', and a category from #hashtags, returning a structured object."
+
 2. Test the parser with sample inputs:
 
 ```
 claude "Write 5 test cases for taskParser.js covering: a simple task, a task with a due date, a task with priority, a task with a category hashtag, and a task with all fields."
 ```
 
+💡 Or just tell Claude inside dsp: "Write five test cases for taskParser.js — a plain task, one with a due date, one with a priority, one with a #category, and one that has all of them."
+
 3. Create the Smart Task Input component:
 
 ```
 claude "Create src/components/SmartTaskInput.jsx with a text input and live preview panel. As the user types, run parseTask on the input and show the extracted title, due date, priority, and category in a preview card below the input. Include an 'Add Task' button."
 ```
+
+💡 Or just tell Claude inside dsp: "Build a SmartTaskInput component with a text box and a live preview that runs parseTask as I type, shows the extracted title, due date, priority, and category in a card below the input, and has an 'Add Task' button."
 
 4. Try these sample inputs in the preview:
    - `Call dentist tomorrow high priority`
@@ -319,6 +341,8 @@ Understand how to use `tool_use` with JSON schemas to get reliable, schema-compl
 claude "Explain the difference between asking Claude for JSON in a text response versus using tool_use with a JSON schema. What problems does structured output solve?"
 ```
 
+💡 Or just tell Claude inside dsp: "Explain how asking for JSON in a normal reply differs from using tool_use with a JSON schema, and what problems structured output solves."
+
 ### Checkpoint
 - [ ] You understand the extraction tool schema structure
 - [ ] You can explain when to use each `tool_choice` option
@@ -367,7 +391,9 @@ Now parse this task:
 claude "I'm going to give you two versions of a task parsing prompt. Run each one 3 times with the input 'Email boss about budget review by Wednesday urgent #work' and show me the outputs. Version 1 uses only instructions. Version 2 uses few-shot examples. Which produces more consistent results?"
 ```
 
-3. Review the full reference at `docs/workshops/templates/S5-Structured-Output-Reference.md`.
+💡 Or just tell Claude inside dsp: "I'll give you two task-parsing prompts — one with just instructions, one with few-shot examples. Run each three times on 'Email boss about budget review by Wednesday urgent #work' and tell me which gives more consistent results."
+
+3. Review the full reference at `docs/workshops/S5-Structured-Output-Reference.md`.
 
 ### Checkpoint
 - [ ] You wrote at least 2 few-shot examples for task parsing
@@ -389,17 +415,23 @@ Add Error Boundaries to protect the dashboard from widget failures.
 claude "Create src/components/ErrorBoundary.jsx as a React class component that catches render errors in its children. Display a styled error card with the message 'Something went wrong' and a 'Try Again' button that resets the error state."
 ```
 
+💡 Or just tell Claude inside dsp: "Create an ErrorBoundary at src/components/ErrorBoundary.jsx — a React class component that catches render errors in its children and shows a styled error card saying 'Something went wrong' with a 'Try Again' button that resets the error state."
+
 2. Wrap the external widgets:
 
 ```
 claude "In the main dashboard layout, wrap WeatherWidget and GitHubActivityWidget each in their own ErrorBoundary component. This way if one widget crashes, the others keep working."
 ```
 
+💡 Or just tell Claude inside dsp: "In the dashboard layout, wrap WeatherWidget and GitHubActivityWidget each in their own ErrorBoundary so one widget crashing doesn't take down the others."
+
 3. Test error handling:
 
 ```
 claude "Temporarily modify the weatherService to throw an error, then verify the ErrorBoundary catches it and shows the fallback UI"
 ```
+
+💡 Or just tell Claude inside dsp: "Temporarily make the weatherService throw an error, then confirm the ErrorBoundary catches it and shows the fallback UI."
 
 ### Checkpoint
 - [ ] `src/components/ErrorBoundary.jsx` catches and displays errors
@@ -435,17 +467,23 @@ gh auth status
 claude "Using the gh CLI, list the 5 most recent issues on this repository (run: gh issue list --limit 5) and summarize them."
 ```
 
+💡 Or just tell Claude inside dsp: "Use the gh CLI to list the five most recent issues on this repo and summarize them."
+
 3. Try a pull-request command too:
 
 ```
 claude "Use gh to show the 5 most recent pull requests and their status (gh pr list --limit 5). Then tell me what's currently open."
 ```
 
+💡 Or just tell Claude inside dsp: "Use gh to show the five most recent pull requests and their status, then tell me what's currently open."
+
 4. Understand the difference:
 
 ```
 claude "Explain the difference between our githubService.js (direct fetch inside the browser app) and using the gh CLI from Claude Code. When would I use each one?"
 ```
+
+💡 Or just tell Claude inside dsp: "Explain the difference between our githubService.js (a direct fetch inside the browser app) and using the gh CLI from Claude Code, and when I'd use each."
 
 ### Checkpoint
 - [ ] `gh auth status` shows you are logged in
@@ -499,11 +537,15 @@ Note: The `${GOOGLE_OAUTH_CREDENTIALS}` syntax references an environment variabl
 claude "Using the Google Calendar MCP, what's on my calendar tomorrow? Then find a free 30-minute slot this week."
 ```
 
+💡 Or just tell Claude inside dsp: "Using the Google Calendar MCP, what's on my calendar tomorrow, and can you find a free 30-minute slot this week?"
+
 4. Understand why this one is an MCP, not a CLI:
 
 ```
 claude "Explain why the Google Calendar MCP works in both Claude chat and Claude Code, while the gh CLI only works where a terminal is available."
 ```
+
+💡 Or just tell Claude inside dsp: "Explain why the Google Calendar MCP works in both Claude chat and Claude Code, while the gh CLI only works where there's a terminal."
 
 ### Checkpoint
 - [ ] An MCP entry exists with environment variable expansion (no raw credentials in the file)
@@ -536,6 +578,8 @@ Learn to manage loaded MCP servers to conserve your context window budget.
 claude "How much context window space do my currently loaded MCP tools consume? What happens if I disable the ones I'm not using right now?"
 ```
 
+💡 Or just tell Claude inside dsp: "How much of my context window do the currently loaded MCP tools take up, and what happens if I turn off the ones I'm not using?"
+
 ### Connection to Workshop 4
 
 Remember "Context is currency" from Workshop 4. Your 200K token context window is shared between CLAUDE.md, MCP tool definitions, and your conversation. Managing loaded MCPs is one of the easiest ways to reclaim context space when you are working on tasks that do not need external integrations.
@@ -560,6 +604,8 @@ Verify the complete integration architecture and file structure.
 claude "List all the service files and widget components we created today. Verify each service has proper error handling and each widget handles loading, error, and success states."
 ```
 
+💡 Or just tell Claude inside dsp: "List all the service files and widget components we built today and check that each service handles errors and each widget handles loading, error, and success states."
+
 2. Verify the build:
 
 ```bash
@@ -573,6 +619,8 @@ npm run lint
 ```
 claude "Give me a summary of the three integration patterns we used today (direct fetch, MCP, CLI) and which parts of our app use each one"
 ```
+
+💡 Or just tell Claude inside dsp: "Summarize the three integration patterns we used today — direct fetch, MCP, and CLI — and which parts of our app use each."
 
 ### Checkpoint
 - [ ] All service files exist in `src/services/`
@@ -591,17 +639,23 @@ claude "Give me a summary of the three integration patterns we used today (direc
 claude "Extend the weatherService to also fetch a 5-day forecast and add a ForecastWidget component that shows daily high/low temperatures"
 ```
 
+💡 Or just tell Claude inside dsp: "Extend the weather service to also pull a 5-day forecast, and add a ForecastWidget that shows daily highs and lows."
+
 ### Bonus 2: Enhanced Task Parser
 
 ```
 claude "Add support for relative dates in taskParser.js: 'next Monday', 'end of month', 'in 3 days'. Write tests for each new pattern."
 ```
 
+💡 Or just tell Claude inside dsp: "Add relative dates like 'next Monday', 'end of month', and 'in 3 days' to taskParser.js, with tests for each new pattern."
+
 ### Bonus 3: Google Workspace Mock
 
 ```
 claude "Create src/services/googleService.js as a mock service that returns sample calendar events, drive files, and email counts. Create a GoogleWorkspaceWidget that displays this mock data."
 ```
+
+💡 Or just tell Claude inside dsp: "Create src/services/googleService.js as a mock that returns sample calendar events, drive files, and email counts, plus a GoogleWorkspaceWidget that displays that mock data."
 
 ---
 
@@ -634,7 +688,7 @@ In this workshop, you built three types of external integrations and learned pro
 
 **Reference materials:**
 - `docs/reference/mcp-security-checklist.md` — Full MCP evaluation checklist
-- `docs/workshops/templates/S5-MCP-Security-Checklist.md` — Student quick reference
-- `docs/workshops/templates/S5-Structured-Output-Reference.md` — Structured output and few-shot reference
+- `docs/workshops/S5-MCP-Security-Checklist.md` — Student quick reference
+- `docs/workshops/S5-Structured-Output-Reference.md` — Structured output and few-shot reference
 
 **Next Workshop:** Workshop 6 — Cloud Tasks and Mobile Control (unit tests + Remote Control)
