@@ -64,6 +64,30 @@ src/
 
 ---
 
+## Before You Start: Create Your Workshop Branch
+
+Before beginning the exercises, create a new Git branch for your work. This keeps your changes isolated and makes it easy to open a pull request at the end.
+
+In your terminal, run (replace `yourname` with your actual name):
+
+```bash
+git checkout -b yourname-workshop-6
+```
+
+**Or just tell Claude:**
+
+```bash
+claude "Create and switch to a new Git branch called yourname-workshop-6"
+```
+
+You should now be on the `yourname-workshop-6` branch. Confirm with:
+
+```bash
+git branch --show-current   # Should show yourname-workshop-6
+```
+
+---
+
 ## Exercise 1: Test Infrastructure Setup (10 minutes)
 
 ### 1.1 Create the Test Setup File
