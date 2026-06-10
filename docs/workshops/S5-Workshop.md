@@ -34,11 +34,27 @@ claude --version      # Should show a version number
 npm run build         # Should succeed without errors
 ```
 
-### API Keys Setup
+### Get Your API Keys
 
-You will need:
-1. **OpenWeatherMap API key** (free tier): Sign up at https://openweathermap.org/api
-2. **GitHub personal access token** (optional): Settings > Developer Settings > Personal Access Tokens
+Before the exercises, grab the two free keys this workshop uses. Keep them somewhere safe for a few minutes — you'll add them to your `.env` file in the "Set Up Your .env File" step below.
+
+#### 1. OpenWeatherMap API key
+
+1. Go to [openweathermap.org](https://openweathermap.org).
+2. Sign up for a free account.
+3. Go to **API Keys** in your dashboard.
+4. Copy your default API key.
+
+#### 2. GitHub Personal Access Token
+
+1. Go to [github.com/settings/tokens](https://github.com/settings/tokens).
+2. Click **Generate new token (classic)**.
+3. Name it: `LifeOps workshop`.
+4. Check the **repo** scope only.
+5. Click **Generate token**.
+6. **Copy it immediately — you only see it once!**
+
+> ⚠️ **Never type your actual API keys inside dsp or Claude Code — always use a separate terminal tab!** You'll see exactly how to do this safely in the "Set Up Your .env File" step.
 
 ---
 
@@ -75,6 +91,42 @@ An **environment variable** is a way to store a secret — like an API key — *
 > 💡 **Think of it like a locked drawer.** Your app has the key and can open the drawer to grab what it needs (your API key). Git can see that the drawer exists, but it can never look inside — so your secrets never end up in your repository or on GitHub.
 
 In this project, secrets live in a file called `.env` (which is listed in `.gitignore`, so Git ignores it). Your code refers to them *by name* — for example `VITE_WEATHER_API_KEY` — instead of containing the actual key.
+
+---
+
+## Set Up Your .env File
+
+Now let's put the keys you collected earlier into a `.env` file — safely. The trick: **create the file with Claude, but add the real keys yourself in a separate terminal tab.**
+
+### Instructions
+
+1. **Create the file (in dsp).** Ask Claude inside dsp to create the `.env` file with empty placeholders:
+
+```
+Create a .env file with empty placeholders for VITE_WEATHER_API_KEY and VITE_GITHUB_TOKEN. Make sure .env is in .gitignore.
+```
+
+This gives you a file that looks like:
+
+```
+VITE_WEATHER_API_KEY=
+VITE_GITHUB_TOKEN=
+```
+
+2. **Open a NEW terminal tab.** Click the **+** button in the terminal panel to open a fresh terminal tab — separate from the one running dsp.
+
+3. **Add your keys in the new terminal tab — NOT in dsp.** In that new tab, open `.env` (for example with `code .env` or your editor of choice) and paste in the real keys you copied earlier:
+
+```
+VITE_WEATHER_API_KEY=your_openweathermap_key_here
+VITE_GITHUB_TOKEN=your_github_token_here
+```
+
+### Why a separate terminal tab?
+
+We **never** type real API keys inside dsp because we don't want them logged. Anything you type into a Claude Code session can be captured in the conversation transcript and session logs. By adding your keys in a separate terminal tab — outside the Claude session — your secrets go straight into the `.env` file and never pass through dsp.
+
+> ⚠️ **NEVER type your actual API keys inside dsp or Claude Code — always use a separate terminal tab!** Let Claude create the empty `.env` file for you, then fill in the real values yourself in a different terminal tab.
 
 ---
 
