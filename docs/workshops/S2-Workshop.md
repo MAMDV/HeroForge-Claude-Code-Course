@@ -65,13 +65,13 @@ If the terminal is not visible, open it: press `Ctrl+`` ` (backtick) or go to **
 
 ### CHECKPOINT 1
 
-Confirm you can see all three panels. Type the following in the terminal and verify it responds:
+Confirm you can see all three panels. Tell Claude:
 
-```bash
-echo "Codespace is running!"
+```
+Print a message confirming my Codespace is running
 ```
 
-**Expected output:** `Codespace is running!`
+**Expected output:** A confirmation message such as `Codespace is running!`
 
 If you see this message, proceed to Part 2. If not, raise your hand for instructor help.
 
@@ -99,20 +99,16 @@ ls
 
 ### Step 5: Configure Git
 
-Configure Git with your identity:
+Configure Git with your identity. Tell Claude (replace `Your Name` and `your.email@example.com` with your actual name and email):
 
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+```
+Configure Git globally with my name "Your Name" and email "your.email@example.com"
 ```
 
-Replace `"Your Name"` with your actual name and `"your.email@example.com"` with your actual email. These quotes are required.
+Verify your configuration. Tell Claude:
 
-Verify your configuration:
-
-```bash
-git config --global user.name
-git config --global user.email
+```
+Show me my configured Git name and email
 ```
 
 **Expected output:** Your name and email, respectively.
@@ -123,14 +119,13 @@ git config --global user.email
 
 ### CHECKPOINT 2
 
-Confirm your Git identity is configured (no empty output):
+Confirm your Git identity is configured (no empty output). Tell Claude:
 
-```bash
-git config --global user.name
-git config --global user.email
+```
+Show me my configured Git name and email
 ```
 
-Both commands should print the values you just set. If either is empty, re-run the `git config --global` commands from Step 5.
+Both values should be the ones you just set. If either is empty, repeat the Git configuration from Step 5.
 
 ---
 
@@ -180,8 +175,10 @@ Follow the install guide at https://code.claude.com/docs/en/quickstart
 
 ### Step 10: Verify Claude Code
 
-```bash
-claude --version
+Tell Claude:
+
+```
+Tell me which version of Claude Code I'm running
 ```
 
 **Expected output:** A version number (e.g., `1.x.x`)
@@ -192,10 +189,10 @@ claude --version
 
 ### CHECKPOINT 3
 
-Verify Claude Code is installed:
+Verify Claude Code is installed. Tell Claude:
 
-```bash
-claude --version
+```
+Tell me which version of Claude Code I'm running
 ```
 
 If you see a version number, proceed to Part 5. If you see "command not found":
@@ -212,10 +209,10 @@ Still not working? Run `source ~/.bashrc` and try again.
 
 ### Step 11: Your First Claude Code Command
 
-This is the main event. Type exactly this in your terminal:
+This is the main event. In Claude Code:
 
-```bash
-claude "Create a file called hello.txt with a welcome message that includes today's date and confirms that my dev environment is working"
+```
+Create a file called hello.txt with a welcome message that includes today's date and confirms that my dev environment is working
 ```
 
 **What happens:**
@@ -227,10 +224,10 @@ claude "Create a file called hello.txt with a welcome message that includes toda
 
 ### Step 12: Verify the File
 
-Check that the file was created:
+Check that the file was created. Tell Claude:
 
-```bash
-cat hello.txt
+```
+Show me the contents of hello.txt
 ```
 
 **Expected output:** A welcome message with today's date and a confirmation that your environment is working.
@@ -251,16 +248,16 @@ You should see a token count showing how much of your context window has been us
 
 ### Step 13: Modify the File with Claude Code
 
-Now let's make a change using natural language:
+Now let's make a change using natural language. In Claude Code:
 
-```bash
-claude "Add a line to hello.txt that says: I completed Workshop 2 on $(date +%Y-%m-%d)"
+```
+Add a line to hello.txt that says: I completed Workshop 2 on $(date +%Y-%m-%d)
 ```
 
-Verify the change:
+Verify the change. Tell Claude:
 
-```bash
-cat hello.txt
+```
+Show me the contents of hello.txt
 ```
 
 You should see the original content plus the new line.
@@ -282,13 +279,10 @@ The two most important shortcuts to remember right now are **Escape** (undo) and
 
 ### CHECKPOINT 4 (Final)
 
-Run the complete environment verification:
+Run the complete environment verification. Tell Claude:
 
-```bash
-echo "=== Environment Verification ==="
-echo "Claude Code: $(claude --version 2>&1 | head -1)"
-echo "hello.txt exists: $(test -f hello.txt && echo 'YES' || echo 'NO')"
-echo "=== All checks complete ==="
+```
+Verify my dev environment: confirm which version of Claude Code is installed and whether hello.txt exists
 ```
 
 **Both checks should show values (no errors).** If hello.txt exists: YES, your dev environment is fully verified.
@@ -317,35 +311,52 @@ If you finish early, try these additional terminal exercises:
 
 ### Extension 1: Explore the Project
 
-```bash
-ls -la          # List all files including hidden ones
-ls src/         # List files in the src directory
-ls docs/        # List files in the docs directory
+Tell Claude:
+
+```
+Show me all files in this project including hidden ones, then list the files in the src and docs directories
 ```
 
 ### Extension 2: Ask Claude Code Questions
 
-```bash
-claude "What files are in this project and what do they do?"
-claude "Explain what package.json is in simple terms"
-claude "What is the src folder used for?"
+In Claude Code:
+
+```
+What files are in this project and what do they do?
+```
+
+In Claude Code:
+
+```
+Explain what package.json is in simple terms
+```
+
+In Claude Code:
+
+```
+What is the src folder used for?
 ```
 
 ### Extension 3: Create More Files
 
-```bash
-claude "Create a file called notes.txt with three tips for learning to code"
-cat notes.txt
+In Claude Code:
+
+```
+Create a file called notes.txt with three tips for learning to code
+```
+
+Tell Claude:
+
+```
+Show me the contents of notes.txt
 ```
 
 ### Extension 4: Terminal Navigation
 
-```bash
-cd src           # Change directory to src
-pwd              # Confirm you're in src
-ls               # List files here
-cd ..            # Go back up one directory
-pwd              # Confirm you're back to the project root
+Tell Claude:
+
+```
+Navigate into the src directory, confirm where I am, list the files there, then go back up to the project root and confirm my location
 ```
 
 ---
@@ -354,10 +365,10 @@ pwd              # Confirm you're back to the project root
 
 Power users can configure a status line at the bottom of their terminal that shows useful information at a glance — the model name, how many tokens you've used, and how long your session has been running.
 
-If you want to try this, ask Claude Code:
+If you want to try this, ask Claude Code. In Claude Code:
 
 ```
-claude "Help me set up a status line that shows my model and context usage"
+Help me set up a status line that shows my model and context usage
 ```
 
 This is completely optional. We'll cover context management in depth in Workshop 4. But if you like having information visible while you work, it's a nice quality-of-life upgrade.
