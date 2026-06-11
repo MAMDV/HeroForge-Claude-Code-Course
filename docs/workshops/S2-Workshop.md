@@ -65,13 +65,13 @@ If the terminal is not visible, open it: press `Ctrl+`` ` (backtick) or go to **
 
 ### CHECKPOINT 1
 
-Confirm you can see all three panels. Tell Claude:
+Confirm you can see all three panels. Type the following in the terminal and verify it responds:
 
-```
-Print a message confirming my Codespace is running
+```bash
+echo "Codespace is running!"
 ```
 
-**Expected output:** A confirmation message such as `Codespace is running!`
+**Expected output:** `Codespace is running!`
 
 If you see this message, proceed to Part 2. If not, raise your hand for instructor help.
 
@@ -105,10 +105,11 @@ Configure Git with your identity. Tell Claude (replace `Your Name` and `your.ema
 Configure Git globally with my name "Your Name" and email "your.email@example.com"
 ```
 
-Verify your configuration. Tell Claude:
+Verify your configuration:
 
-```
-Show me my configured Git name and email
+```bash
+git config --global user.name
+git config --global user.email
 ```
 
 **Expected output:** Your name and email, respectively.
@@ -119,13 +120,14 @@ Show me my configured Git name and email
 
 ### CHECKPOINT 2
 
-Confirm your Git identity is configured (no empty output). Tell Claude:
+Confirm your Git identity is configured (no empty output):
 
-```
-Show me my configured Git name and email
+```bash
+git config --global user.name
+git config --global user.email
 ```
 
-Both values should be the ones you just set. If either is empty, repeat the Git configuration from Step 5.
+Both commands should print the values you just set. If either is empty, repeat the Git configuration from Step 5.
 
 ---
 
