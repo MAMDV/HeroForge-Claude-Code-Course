@@ -30,15 +30,10 @@ By completing this workshop, you will:
 
 ### Environment Verification
 
-Before starting, verify your environment is ready:
+Before starting, verify your environment is ready. Tell Claude:
 
-```bash
-# Check that dependencies are installed
-npm list vitest
-npm list @testing-library/react
-
-# If missing, install them:
-npm install -D vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom @vitest/coverage-v8
+```
+Check that the testing dependencies are installed — vitest, @testing-library/react, @testing-library/jest-dom, @testing-library/user-event, jsdom, and @vitest/coverage-v8 — and install any that are missing as dev dependencies
 ```
 
 ### Project Structure Check
@@ -68,22 +63,18 @@ src/
 
 Before beginning the exercises, create a new Git branch for your work. This keeps your changes isolated and makes it easy to open a pull request at the end.
 
-In your terminal, run (replace `yourname` with your actual name):
+Tell Claude (replace `yourname` with your actual name):
 
-```bash
-git checkout -b yourname-workshop-6
 ```
-
-**Or just tell Claude:**
-
-```bash
-claude "Create and switch to a new Git branch called yourname-workshop-6"
+Create and switch to a new Git branch called yourname-workshop-6
 ```
 
 You should now be on the `yourname-workshop-6` branch. Confirm with:
 
-```bash
-git branch --show-current   # Should show yourname-workshop-6
+Tell Claude:
+
+```
+Confirm which Git branch I'm currently on
 ```
 
 ---
@@ -94,16 +85,17 @@ git branch --show-current   # Should show yourname-workshop-6
 
 Create a test setup file that runs before every test:
 
-**Prompt to use with Claude Code:**
+In Claude Code:
+
 ```
-claude "Create a test setup file at src/test/setup.js that:
+Create a test setup file at src/test/setup.js that:
 1. Imports cleanup from @testing-library/react
 2. Imports afterEach and vi from vitest
 3. Spies on console.error to suppress noisy warnings
-4. Runs cleanup after each test"
+4. Runs cleanup after each test
 ```
 
-💡 Or just tell Claude inside dsp: "Set up a test file at src/test/setup.js that imports cleanup from Testing Library, imports afterEach and vi from Vitest, silences noisy console.error warnings, and runs cleanup after each test."
+💡 Tell Claude: Set up a test file at src/test/setup.js that imports cleanup from Testing Library, imports afterEach and vi from Vitest, silences noisy console.error warnings, and runs cleanup after each test.
 
 **Expected result:** A file at `src/test/setup.js` with cleanup and console spy.
 
@@ -111,20 +103,23 @@ claude "Create a test setup file at src/test/setup.js that:
 
 Verify your `vitest.config.js` includes the setup file:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Check that vitest.config.js has environment set to jsdom and
-setupFiles pointing to src/test/setup.js. Update it if needed."
+Check that vitest.config.js has environment set to jsdom and
+setupFiles pointing to src/test/setup.js. Update it if needed.
 ```
 
-💡 Or just tell Claude inside dsp: "Check that vitest.config.js uses the jsdom environment and points setupFiles at src/test/setup.js, and fix it if it doesn't."
+💡 Tell Claude: Check that vitest.config.js uses the jsdom environment and points setupFiles at src/test/setup.js, and fix it if it doesn't.
 
 ### 1.3 Verify the Setup
 
 Run the test suite to make sure the infrastructure works:
 
-```bash
-npx vitest run
+Tell Claude:
+
+```
+Run the tests
 ```
 
 **Checkpoint:** The command should run without errors (even if there are no tests yet).
@@ -137,16 +132,17 @@ npx vitest run
 
 Write tests for the ContactList component:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for the ContactList component. Test that:
+Write Vitest tests for the ContactList component. Test that:
 1. Contact names render when given an array of contacts
 2. Email addresses render for each contact
 3. An empty state message shows when the contacts array is empty
-Save to src/test/ContactList.test.jsx"
+Save to src/test/ContactList.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for ContactList that check names render from an array of contacts, emails render for each, and an empty-state message shows when there are none — save them to src/test/ContactList.test.jsx."
+💡 Tell Claude: Write Vitest tests for ContactList that check names render from an array of contacts, emails render for each, and an empty-state message shows when there are none — save them to src/test/ContactList.test.jsx.
 
 **What to verify:**
 - [ ] Test file created at `src/test/ContactList.test.jsx`
@@ -155,42 +151,45 @@ Save to src/test/ContactList.test.jsx"
 
 ### 2.2 TaskList Tests
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for the TaskList component. Test that:
+Write Vitest tests for the TaskList component. Test that:
 1. Task titles render in the list
 2. Completed tasks have a visual indicator
 3. Empty state works when no tasks are provided
-Save to src/test/TaskList.test.jsx"
+Save to src/test/TaskList.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for TaskList that check task titles render, completed tasks have a visual indicator, and the empty state works when no tasks are provided — save to src/test/TaskList.test.jsx."
+💡 Tell Claude: Write Vitest tests for TaskList that check task titles render, completed tasks have a visual indicator, and the empty state works when no tasks are provided — save to src/test/TaskList.test.jsx.
 
 ### 2.3 NoteList Tests
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for the NoteList component. Test that:
+Write Vitest tests for the NoteList component. Test that:
 1. Note content renders correctly
 2. Timestamps are displayed
 3. Empty state message appears when there are no notes
-Save to src/test/NoteList.test.jsx"
+Save to src/test/NoteList.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for NoteList that check note content renders, timestamps show, and an empty-state message appears when there are no notes — save to src/test/NoteList.test.jsx."
+💡 Tell Claude: Write Vitest tests for NoteList that check note content renders, timestamps show, and an empty-state message appears when there are no notes — save to src/test/NoteList.test.jsx.
 
 ### 2.4 StatCard Tests
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for the StatCard component. Test that:
+Write Vitest tests for the StatCard component. Test that:
 1. The label prop renders
 2. The value prop renders
 3. Different label/value combinations work correctly
-Save to src/test/StatCard.test.jsx"
+Save to src/test/StatCard.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for StatCard that check the label renders, the value renders, and different label/value combinations work — save to src/test/StatCard.test.jsx."
+💡 Tell Claude: Write Vitest tests for StatCard that check the label renders, the value renders, and different label/value combinations work — save to src/test/StatCard.test.jsx.
 
 **Checkpoint:** Run `npx vitest run` — all component tests should pass.
 
@@ -202,35 +201,37 @@ Save to src/test/StatCard.test.jsx"
 
 Write tests for the taskParser service — a pure function with no DOM dependencies:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for the taskParser service. Test that:
+Write Vitest tests for the taskParser service. Test that:
 1. A simple task string returns the correct title
 2. Exclamation marks set high priority
 3. Natural language dates are extracted
 4. Tags prefixed with # are parsed
 5. Empty strings return a sensible default
-Save to src/test/taskParser.test.js"
+Save to src/test/taskParser.test.js
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for the taskParser service covering a simple task title, exclamation marks setting high priority, extracted natural-language dates, #tags being parsed, and empty strings returning a sensible default — save to src/test/taskParser.test.js."
+💡 Tell Claude: Write Vitest tests for the taskParser service covering a simple task title, exclamation marks setting high priority, extracted natural-language dates, #tags being parsed, and empty strings returning a sensible default — save to src/test/taskParser.test.js.
 
 ### 3.2 SmartTaskInput Tests
 
 Test the SmartTaskInput component, which integrates with taskParser:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for SmartTaskInput. Test that:
+Write Vitest tests for SmartTaskInput. Test that:
 1. The input field renders
 2. Typing text and pressing Enter creates a task
 3. The input clears after submission
 4. The parsed task has the correct title
 Use userEvent from @testing-library/user-event for typing simulation.
-Save to src/test/SmartTaskInput.test.jsx"
+Save to src/test/SmartTaskInput.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for SmartTaskInput that check the input renders, typing then pressing Enter creates a task, the input clears after submit, and the parsed task has the right title — use userEvent for typing and save to src/test/SmartTaskInput.test.jsx."
+💡 Tell Claude: Write Vitest tests for SmartTaskInput that check the input renders, typing then pressing Enter creates a task, the input clears after submit, and the parsed task has the right title — use userEvent for typing and save to src/test/SmartTaskInput.test.jsx.
 
 **Checkpoint:** Run `npx vitest run` — all service and integration tests should pass.
 
@@ -242,33 +243,35 @@ Save to src/test/SmartTaskInput.test.jsx"
 
 Test the AppContext provider and its state management:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for AppContext. Test that:
+Write Vitest tests for AppContext. Test that:
 1. The provider renders children without crashing
 2. The default state values are correct
 3. State updates propagate to consuming components
 Wrap test components in the AppContext provider.
-Save to src/test/AppContext.test.jsx"
+Save to src/test/AppContext.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for AppContext that check the provider renders children, the default state is correct, and state updates reach consuming components — wrap the test components in the provider and save to src/test/AppContext.test.jsx."
+💡 Tell Claude: Write Vitest tests for AppContext that check the provider renders children, the default state is correct, and state updates reach consuming components — wrap the test components in the provider and save to src/test/AppContext.test.jsx.
 
 ### 4.2 useLocalStorage Tests
 
 Test the custom hook for localStorage persistence:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for useLocalStorage. Test that:
+Write Vitest tests for useLocalStorage. Test that:
 1. It returns the initial value when localStorage is empty
 2. It persists values to localStorage on update
 3. It reads existing values from localStorage
 Use renderHook from @testing-library/react.
-Save to src/test/useLocalStorage.test.js"
+Save to src/test/useLocalStorage.test.js
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for useLocalStorage that check it returns the initial value when storage is empty, persists updates, and reads existing values — use renderHook and save to src/test/useLocalStorage.test.js."
+💡 Tell Claude: Write Vitest tests for useLocalStorage that check it returns the initial value when storage is empty, persists updates, and reads existing values — use renderHook and save to src/test/useLocalStorage.test.js.
 
 **Checkpoint:** All context and hook tests pass.
 
@@ -280,9 +283,10 @@ Save to src/test/useLocalStorage.test.js"
 
 Add an accent color picker with six WCAG AA-compliant presets:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Create an AccentColorPicker component with six color presets:
+Create an AccentColorPicker component with six color presets:
 1. Ocean Blue (#2563EB)
 2. Emerald Green (#059669)
 3. Amber (#D97706)
@@ -292,23 +296,24 @@ claude "Create an AccentColorPicker component with six color presets:
 Each color should be a circular button. Clicking it updates the accent
 color in AppContext and persists to localStorage. Show a checkmark on
 the selected color. All colors must have WCAG AA contrast ratio against
-white text. Save to src/components/AccentColorPicker.jsx"
+white text. Save to src/components/AccentColorPicker.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Build an AccentColorPicker at src/components/AccentColorPicker.jsx with six circular preset buttons — Ocean Blue #2563EB, Emerald Green #059669, Amber #D97706, Rose #E11D48, Violet #7C3AED, Slate #475569 — where clicking one updates the accent color in AppContext, persists to localStorage, shows a checkmark on the selected color, and every color meets WCAG AA contrast against white text."
+💡 Tell Claude: Build an AccentColorPicker at src/components/AccentColorPicker.jsx with six circular preset buttons — Ocean Blue #2563EB, Emerald Green #059669, Amber #D97706, Rose #E11D48, Violet #7C3AED, Slate #475569 — where clicking one updates the accent color in AppContext, persists to localStorage, shows a checkmark on the selected color, and every color meets WCAG AA contrast against white text.
 
 ### 5.2 Test the Color Picker
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for AccentColorPicker. Test that:
+Write Vitest tests for AccentColorPicker. Test that:
 1. All six color swatches render
 2. Clicking a swatch updates the selected color
 3. The selected color shows a visual indicator
-Save to src/test/AccentColorPicker.test.jsx"
+Save to src/test/AccentColorPicker.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for AccentColorPicker that check all six swatches render, clicking one updates the selected color, and the selected color shows an indicator — save to src/test/AccentColorPicker.test.jsx."
+💡 Tell Claude: Write Vitest tests for AccentColorPicker that check all six swatches render, clicking one updates the selected color, and the selected color shows an indicator — save to src/test/AccentColorPicker.test.jsx.
 
 **Checkpoint:** The color picker renders and tests pass.
 
@@ -318,18 +323,19 @@ Save to src/test/AccentColorPicker.test.jsx"
 
 ### 6.1 Mock and Test the Widget
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Write Vitest tests for WeatherWidget that mock the fetch API.
+Write Vitest tests for WeatherWidget that mock the fetch API.
 Test that:
 1. A loading state shows while data is being fetched
 2. Weather data renders after a successful fetch
 3. An error message shows when the API call fails
 Use vi.mock to mock the global fetch function.
-Save to src/test/WeatherWidget.test.jsx"
+Save to src/test/WeatherWidget.test.jsx
 ```
 
-💡 Or just tell Claude inside dsp: "Write Vitest tests for WeatherWidget that mock the fetch API and check a loading state shows while fetching, weather renders after success, and an error message shows on failure — use vi.mock for global fetch and save to src/test/WeatherWidget.test.jsx."
+💡 Tell Claude: Write Vitest tests for WeatherWidget that mock the fetch API and check a loading state shows while fetching, weather renders after success, and an error message shows on failure — use vi.mock for global fetch and save to src/test/WeatherWidget.test.jsx.
 
 **Checkpoint:** WeatherWidget tests pass with mocked data.
 
@@ -339,8 +345,10 @@ Save to src/test/WeatherWidget.test.jsx"
 
 ### 7.1 Run Coverage Report
 
-```bash
-npx vitest run --coverage
+Tell Claude:
+
+```
+Run the tests with coverage
 ```
 
 **What to check:**
@@ -350,13 +358,14 @@ npx vitest run --coverage
 
 ### 7.2 Identify Gaps
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Look at the test coverage report and identify any components or
-services with less than 50% coverage. Suggest which tests to add."
+Look at the test coverage report and identify any components or
+services with less than 50% coverage. Suggest which tests to add.
 ```
 
-💡 Or just tell Claude inside dsp: "Look at the coverage report, find any components or services under 50% coverage, and suggest which tests to add."
+💡 Tell Claude: Look at the coverage report, find any components or services under 50% coverage, and suggest which tests to add.
 
 ---
 
@@ -368,14 +377,15 @@ Hooks are scripts that run automatically before or after Claude Code actions. A 
 
 Create a hook that runs your test suite before every commit:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Add a pre-commit validation hook to settings.json that runs
+Add a pre-commit validation hook to settings.json that runs
 npm test before any git commit command. If the tests fail, block
-the commit."
+the commit.
 ```
 
-💡 Or just tell Claude inside dsp: "Add a pre-commit validation hook to settings.json that runs npm test before any git commit and blocks the commit if the tests fail."
+💡 Tell Claude: Add a pre-commit validation hook to settings.json that runs npm test before any git commit and blocks the commit if the tests fail.
 
 The resulting `settings.json` should look like this:
 
@@ -431,12 +441,13 @@ See the [Hooks Reference](S6-Hooks-Reference.md) for more details and common use
 
 With the Playwright MCP available, take a screenshot of your running app:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Take a screenshot of the LifeOps app running on localhost:5173"
+Take a screenshot of the LifeOps app running on localhost:5173
 ```
 
-💡 Or just tell Claude inside dsp: "Take a screenshot of the LifeOps app running on localhost:5173."
+💡 Tell Claude: Take a screenshot of the LifeOps app running on localhost:5173.
 
 ### 9.2 Make a Visual Change
 
@@ -444,13 +455,14 @@ Change the accent color using the color picker (or modify a CSS value directly).
 
 ### 9.3 Take an After Screenshot and Compare
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "Take another screenshot of the LifeOps app and compare it
-to the previous one. What visual differences do you see?"
+Take another screenshot of the LifeOps app and compare it
+to the previous one. What visual differences do you see?
 ```
 
-💡 Or just tell Claude inside dsp: "Take another screenshot of the LifeOps app and compare it to the previous one — what's different?"
+💡 Tell Claude: Take another screenshot of the LifeOps app and compare it to the previous one — what's different?
 
 **What to verify:**
 - [ ] Before screenshot captured successfully
@@ -470,27 +482,36 @@ See the [Visual Testing Guide](S6-Visual-Testing-Guide.md) for more details.
 Write a test for a feature that does not exist yet, then have Claude implement it:
 
 **Step 1 — Write the test first:**
+
+In Claude Code:
+
 ```
-claude "Add a test to taskParser.test.js that verifies parsing a
+Add a test to taskParser.test.js that verifies parsing a
 recurring task like 'Water plants every Monday' returns
 recurrence: 'weekly' and recurrenceDay: 'Monday'. Do NOT update
-the taskParser implementation yet."
+the taskParser implementation yet.
 ```
 
-💡 Or just tell Claude inside dsp: "Add a test to taskParser.test.js that expects parsing 'Water plants every Monday' to return recurrence 'weekly' and recurrenceDay 'Monday' — but don't change the taskParser implementation yet."
+💡 Tell Claude: Add a test to taskParser.test.js that expects parsing 'Water plants every Monday' to return recurrence 'weekly' and recurrenceDay 'Monday' — but don't change the taskParser implementation yet.
 
 **Step 2 — Run the test and confirm it fails:**
-```bash
-npx vitest run src/test/taskParser.test.js
+
+Tell Claude:
+
+```
+Run the tests in src/test/taskParser.test.js
 ```
 
 **Step 3 — Share the failure with Claude:**
+
+In Claude Code:
+
 ```
-claude "Here is the failing test output for recurring task parsing.
-Update taskParser to make this test pass."
+Here is the failing test output for recurring task parsing.
+Update taskParser to make this test pass.
 ```
 
-💡 Or just tell Claude inside dsp: "Here's the failing test output for recurring tasks — update taskParser so the test passes."
+💡 Tell Claude: Here's the failing test output for recurring tasks — update taskParser so the test passes.
 
 **What to verify:**
 - [ ] Test was written before the implementation
@@ -502,14 +523,15 @@ Update taskParser to make this test pass."
 
 Before implementing a complex feature, have Claude interview you:
 
-**Prompt:**
+In Claude Code:
+
 ```
-claude "I want to add a calendar view to LifeOps that shows tasks
+I want to add a calendar view to LifeOps that shows tasks
 and notes on their dates. Before you implement this, what questions
-do you have?"
+do you have?
 ```
 
-💡 Or just tell Claude inside dsp: "I want to add a calendar view to LifeOps that shows tasks and notes on their dates — before you build it, what questions do you have for me?"
+💡 Tell Claude: I want to add a calendar view to LifeOps that shows tasks and notes on their dates — before you build it, what questions do you have for me?
 
 **What to observe:**
 - Claude asks about scope (tasks, notes, or both?)
@@ -530,20 +552,26 @@ You do not need to actually implement the calendar view. The exercise is about t
 If any of your tests failed during earlier exercises, practice the retry-with-error-feedback pattern:
 
 **Bad retry (do not do this):**
+
+In Claude Code:
+
 ```
-claude "That didn't work. Try again."
+That didn't work. Try again.
 ```
 
-💡 Or just tell Claude inside dsp: "That didn't work. Try again."
+💡 Tell Claude: That didn't work. Try again.
 
 **Good retry (do this):**
+
+In Claude Code:
+
 ```
-claude "The test failed because ContactCard received undefined for
+The test failed because ContactCard received undefined for
 the email prop. The error is on line 23 where you destructure
-props — you used 'mail' instead of 'email'. Fix the prop name."
+props — you used 'mail' instead of 'email'. Fix the prop name.
 ```
 
-💡 Or just tell Claude inside dsp: "The ContactCard test failed because the component received undefined for the email prop — on line 23 you destructured 'mail' instead of 'email'. Fix the prop name."
+💡 Tell Claude: The ContactCard test failed because the component received undefined for the email prop — on line 23 you destructured 'mail' instead of 'email'. Fix the prop name.
 
 ### 11.2 Understand When Retries Work
 
@@ -563,11 +591,13 @@ props — you used 'mail' instead of 'email'. Fix the prop name."
 
 ### 12.1 Run Tests Remotely
 
-Execute your test suite as a cloud task:
+Execute your test suite as a cloud task (use the `--remote` flag):
 
-```bash
-claude --remote "Run npx vitest run and report the results. Tell me
-how many tests passed, how many failed, and if coverage is above 70%."
+In Claude Code:
+
+```
+Run npx vitest run and report the results. Tell me
+how many tests passed, how many failed, and if coverage is above 70%.
 ```
 
 **What to observe:**
@@ -577,11 +607,13 @@ how many tests passed, how many failed, and if coverage is above 70%."
 
 ### 12.2 Remote Feature Addition
 
-Try adding a feature remotely:
+Try adding a feature remotely (use the `--remote` flag):
 
-```bash
-claude --remote "Add a test to the StatCard test file that verifies
-the component handles a zero value correctly. Run the test to confirm."
+In Claude Code:
+
+```
+Add a test to the StatCard test file that verifies
+the component handles a zero value correctly. Run the test to confirm.
 ```
 
 ---
@@ -634,20 +666,10 @@ Practice the full mobile workflow:
 
 ## Wrap-Up Checklist
 
-Before finishing, verify everything works:
+Before finishing, verify everything works. Tell Claude:
 
-```bash
-# Run full test suite
-npx vitest run
-
-# Run with coverage
-npx vitest run --coverage
-
-# Build the project
-npm run build
-
-# Run linter
-npm run lint
+```
+Run the full test suite with coverage, build the project, and run the linter — and report any failures
 ```
 
 **Final checklist:**

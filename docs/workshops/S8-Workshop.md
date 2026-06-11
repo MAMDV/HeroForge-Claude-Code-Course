@@ -26,23 +26,10 @@ By completing this workshop, you will:
 
 ### Environment Verification
 
-Before starting, verify your environment is ready:
+Before starting, verify your environment is ready. Tell Claude:
 
-```bash
-# Check Claude Code is installed
-claude --version
-
-# Check GitHub CLI is installed
-gh --version
-
-# Verify the LifeOps project builds
-npm run build
-
-# Verify tests pass
-npm test
-
-# Verify linter is clean
-npm run lint
+```
+Confirm Claude Code and the GitHub CLI are installed, then verify the LifeOps project builds, the tests pass, and the linter is clean
 ```
 
 ### Accounts and Access
@@ -64,26 +51,32 @@ Run a comprehensive quality check to ensure the app is production-ready.
 
 1. Ask Claude to run the full quality gate suite:
 
+In Claude Code:
+
 ```
-claude "Run a complete pre-deploy check for the LifeOps project:
+Run a complete pre-deploy check for the LifeOps project:
 1. Run npm run build and report any errors
 2. Run npm test and report pass/fail counts
 3. Run npm run lint and report any warnings or errors
 4. Check that .env is in .gitignore
 5. Check that no API keys are hardcoded in source files
-Give me a pass/fail summary for each check."
+Give me a pass/fail summary for each check.
 ```
 
 2. Fix any issues found:
 
+In Claude Code:
+
 ```
-claude "Fix any lint errors or test failures found in the pre-deploy check. Do not skip or ignore any issues."
+Fix any lint errors or test failures found in the pre-deploy check. Do not skip or ignore any issues.
 ```
 
 3. Verify all issues are resolved:
 
-```bash
-npm run build && npm test && npm run lint
+Tell Claude:
+
+```
+Run the full verification suite — build, lint, and tests
 ```
 
 ### Checkpoint
@@ -104,23 +97,26 @@ Add a hook that scans for hardcoded secrets before any `git push`, applying the 
 
 1. Ask Claude to set up the security hook:
 
+In Claude Code:
+
 ```
-claude "Create a post-tool-use hook in .claude/settings.json that intercepts git push commands. The hook should scan source files in src/ for patterns matching API keys (sk-, AKIA, ghp_), hardcoded passwords, and .env file patterns. If secrets are detected, block the push and display a warning. This is the same hook pattern from Workshop 7 applied to deployment safety."
+Create a post-tool-use hook in .claude/settings.json that intercepts git push commands. The hook should scan source files in src/ for patterns matching API keys (sk-, AKIA, ghp_), hardcoded passwords, and .env file patterns. If secrets are detected, block the push and display a warning. This is the same hook pattern from Workshop 7 applied to deployment safety.
 ```
 
 2. Test the hook by verifying it does not block a clean push:
 
-```bash
-# This should succeed — no secrets in source files
-git push --dry-run origin main
-```
+Tell Claude:
 
-💡 Or just tell Claude: "Do a dry-run push to main so I can confirm nothing is blocked."
+```
+Do a dry-run push to main so I can confirm nothing is blocked.
+```
 
 3. Verify the hook catches issues (optional test):
 
+In Claude Code:
+
 ```
-claude "Create a temporary test file with a fake API key to verify the security hook catches it. Then remove the test file."
+Create a temporary test file with a fake API key to verify the security hook catches it. Then remove the test file.
 ```
 
 ### Why This Matters
@@ -146,19 +142,23 @@ Set up a GitHub Actions workflow that automatically reviews every pull request u
 
 1. Review the workflow template:
 
+In Claude Code:
+
 ```
-claude "Read the file .github/workflows/claude-review.yml and explain what each section does."
+Read the file .github/workflows/claude-review.yml and explain what each section does.
 ```
 
 2. If the workflow file does not exist, create it:
 
+In Claude Code:
+
 ```
-claude "Create a GitHub Actions workflow at .github/workflows/claude-review.yml that:
+Create a GitHub Actions workflow at .github/workflows/claude-review.yml that:
 1. Triggers on pull request open and synchronize events
 2. Checks out the code
 3. Runs claude -p with a review prompt using --output-format json
 4. Uses the ANTHROPIC_API_KEY secret for authentication
-Add comments explaining each section."
+Add comments explaining each section.
 ```
 
 3. Add the API key to your GitHub repository secrets:
@@ -191,23 +191,29 @@ Deploy the LifeOps Command Center to a live URL using Vercel.
 
 1. Log in to Vercel CLI:
 
-```bash
-vercel login
+Tell Claude:
+
+```
+Deploy the app to production with Vercel
 ```
 
 2. Ask Claude to prepare the deployment:
 
+In Claude Code:
+
 ```
-claude "Prepare the LifeOps project for Vercel deployment:
+Prepare the LifeOps project for Vercel deployment:
 1. Check that a vercel.json config exists — if not, create one with the correct build settings for a Vite React app
 2. Make sure the build output directory is set to 'dist'
-3. Verify that environment variables are documented in .env.example"
+3. Verify that environment variables are documented in .env.example
 ```
 
 3. Deploy to Vercel preview:
 
-```bash
-vercel
+Tell Claude:
+
+```
+Deploy the app to Vercel as a preview deployment
 ```
 
 4. Review the preview deployment:
@@ -218,14 +224,18 @@ vercel
 
 5. Deploy to production:
 
-```bash
-vercel --prod
+Tell Claude:
+
+```
+Deploy the app to production with Vercel
 ```
 
 6. Record your production URL:
 
+In Claude Code:
+
 ```
-claude "Save the production URL to docs/deployment-url.md along with the deployment date and a note about the Vercel project name."
+Save the production URL to docs/deployment-url.md along with the deployment date and a note about the Vercel project name.
 ```
 
 ### Checkpoint
@@ -246,30 +256,34 @@ Create a pull request for final review and merge it into the main branch.
 
 1. Make sure all changes are committed:
 
+In Claude Code:
+
 ```
-claude "Check for any uncommitted changes in the LifeOps project. If there are any, stage and commit them with an appropriate message."
+Check for any uncommitted changes in the LifeOps project. If there are any, stage and commit them with an appropriate message.
 ```
 
 2. Create a feature branch if not already on one:
 
-```bash
-git checkout -b release/v1.0.0
-```
+Tell Claude:
 
-💡 Or just tell Claude: "Create and switch to a new branch called release/v1.0.0."
+```
+Create and switch to a new Git branch called release/v1.0.0
+```
 
 3. Push to the remote:
 
-```bash
-git push -u origin release/v1.0.0
-```
+Tell Claude:
 
-💡 Or just tell Claude: "Push the release/v1.0.0 branch to GitHub and set it to track origin."
+```
+Push my branch to GitHub
+```
 
 4. Ask Claude to create the pull request:
 
+In Claude Code:
+
 ```
-claude "Create a pull request from release/v1.0.0 to main with:
+Create a pull request from release/v1.0.0 to main with:
 - Title: 'LifeOps Command Center v1.0.0'
 - Description that summarizes all features built across Workshops 1-8:
   - Workshop 1: Static landing page
@@ -279,16 +293,16 @@ claude "Create a pull request from release/v1.0.0 to main with:
   - Workshop 5: Weather widget, GitHub activity, smart task parser
   - Workshop 6: Unit tests, accent color picker, cloud tasks
   - Workshop 7: Agents, skills, hooks, and the Claude Agent SDK
-  - Workshop 8: Deployment and release"
+  - Workshop 8: Deployment and release
 ```
 
 5. Review the PR on GitHub and merge:
 
-```bash
-gh pr merge --squash --delete-branch
-```
+Tell Claude:
 
-💡 Or just tell Claude: "Merge the pull request with a squash and delete the branch afterward."
+```
+Merge the pull request with a squash and delete the branch afterward.
+```
 
 ### Checkpoint
 - [ ] All changes are committed and pushed
@@ -353,29 +367,29 @@ Create a Git tag marking the v1.0.0 release and publish release notes.
 
 1. Switch to main and pull the latest:
 
-```bash
-git checkout main
-git pull origin main
-```
+Tell Claude:
 
-💡 Or just tell Claude: "Switch to the main branch and pull the latest changes."
+```
+Switch to the main branch and pull the latest changes from GitHub
+```
 
 2. Create the release tag:
 
-```bash
-git tag -a v1.0.0 -m "LifeOps Command Center v1.0.0 — first production release"
-git push origin v1.0.0
-```
+Tell Claude:
 
-💡 Or just tell Claude: "Push the v1.0.0 tag up to GitHub."
+```
+Create a Git tag v1.0.0 with the message "LifeOps Command Center v1.0.0 — first production release" and push it to GitHub
+```
 
 3. Ask Claude to create GitHub release notes:
 
+In Claude Code:
+
 ```
-claude "Create a GitHub release for tag v1.0.0 using gh release create. Include:
+Create a GitHub release for tag v1.0.0 using gh release create. Include:
 - Title: 'LifeOps Command Center v1.0.0'
 - Release notes summarizing all features
-- Mark it as the latest release"
+- Mark it as the latest release
 ```
 
 ### Checkpoint
@@ -395,8 +409,10 @@ Run through a validation checklist to confirm the deployed app works correctly.
 
 1. Ask Claude to generate a validation checklist:
 
+In Claude Code:
+
 ```
-claude "Create a post-deploy validation checklist for the LifeOps app at docs/post-deploy-checklist.md. Include checks for:
+Create a post-deploy validation checklist for the LifeOps app at docs/post-deploy-checklist.md. Include checks for:
 1. Homepage loads without console errors
 2. Contact list displays and can be interacted with
 3. Task list renders with correct formatting
@@ -406,7 +422,7 @@ claude "Create a post-deploy validation checklist for the LifeOps app at docs/po
 7. Smart task input parses natural language correctly
 8. Accent color picker changes the theme
 9. Navigation between sections works
-10. Mobile responsiveness is acceptable"
+10. Mobile responsiveness is acceptable
 ```
 
 2. Walk through the checklist on your live deployment:
@@ -417,8 +433,10 @@ claude "Create a post-deploy validation checklist for the LifeOps app at docs/po
 
 3. Fix any critical issues:
 
+In Claude Code:
+
 ```
-claude "I found the following issues on the live deployment: [describe issues]. Fix them, commit, and redeploy."
+I found the following issues on the live deployment: [describe issues]. Fix them, commit, and redeploy.
 ```
 
 ### Checkpoint
@@ -437,14 +455,16 @@ Prepare a short presentation (3-5 minutes) showcasing your LifeOps Command Cente
 
 1. Ask Claude to generate presentation talking points:
 
+In Claude Code:
+
 ```
-claude "Create presentation talking points at docs/presentation-notes.md for a 3-5 minute demo of the LifeOps Command Center. Structure it as:
+Create presentation talking points at docs/presentation-notes.md for a 3-5 minute demo of the LifeOps Command Center. Structure it as:
 1. Introduction (30 seconds): What is LifeOps and why I built it
 2. Architecture overview (1 minute): Tech stack, component structure, how Claude Code helped
 3. Live demo walkthrough (2 minutes): Show contacts, tasks, notes, weather widget, smart task input, color picker
 4. Key learnings (1 minute): Most valuable Claude Code techniques learned
 5. What's next (30 seconds): Future features I would add
-Include specific things to click on and show during the demo."
+Include specific things to click on and show during the demo.
 ```
 
 2. Practice the demo flow:
@@ -454,8 +474,10 @@ Include specific things to click on and show during the demo."
 
 3. Prepare for questions:
 
+In Claude Code:
+
 ```
-claude "Generate a list of 5 likely audience questions about the LifeOps project and suggested answers. Focus on questions about Claude Code workflow, architecture decisions, and deployment."
+Generate a list of 5 likely audience questions about the LifeOps project and suggested answers. Focus on questions about Claude Code workflow, architecture decisions, and deployment.
 ```
 
 ### Checkpoint
@@ -468,20 +490,10 @@ claude "Generate a list of 5 likely audience questions about the LifeOps project
 
 ## Wrap-Up Checklist
 
-Before finishing, run the final verification:
+Before finishing, run the final verification. Tell Claude:
 
-```bash
-# Verify the project still builds
-npm run build
-
-# Run tests
-npm test
-
-# Run linter
-npm run lint
-
-# Check the deployment is live
-curl -s -o /dev/null -w "%{http_code}" YOUR_PRODUCTION_URL
+```
+Verify the project still builds, the tests pass, and the linter is clean, then check that my production URL is live and returning a 200 response
 ```
 
 **Final checklist:**

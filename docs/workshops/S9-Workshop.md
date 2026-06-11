@@ -24,18 +24,10 @@ By completing this workshop, you will:
 
 Before starting, verify your environment is ready:
 
-```bash
-# Check Claude Code is installed
-claude --version
+Tell Claude:
 
-# Verify the LifeOps project builds
-npm run build
-
-# Verify tests pass
-npm test
-
-# Verify the app is deployed and accessible
-# Open your Vercel production URL in a browser
+```
+Confirm Claude Code is installed and show me my project files, then build the project for production and run the tests
 ```
 
 ### What You Should Have From Workshop 8
@@ -56,22 +48,20 @@ If any of these are missing, complete them before proceeding. The Design Showdow
 
 Before beginning the exercises, create a new Git branch for your work. This keeps your changes isolated and makes it easy to open a pull request at the end.
 
-In your terminal, run (replace `yourname` with your actual name):
+Replace `yourname` with your actual name:
 
-```bash
-git checkout -b yourname-workshop-9
+Tell Claude:
+
 ```
-
-**Or just tell Claude:**
-
-```bash
-claude "Create and switch to a new Git branch called yourname-workshop-9"
+Create and switch to a new Git branch called yourname-workshop-9
 ```
 
 You should now be on the `yourname-workshop-9` branch. Confirm with:
 
-```bash
-git branch --show-current   # Should show yourname-workshop-9
+Tell Claude:
+
+```
+Confirm which Git branch I'm currently on
 ```
 
 ---
@@ -82,8 +72,10 @@ git branch --show-current   # Should show yourname-workshop-9
 
 Run this single command to install all seven libraries:
 
-```bash
-npm install motion vaul sonner atropos cmdk @dicebear/core @dicebear/collection
+Tell Claude:
+
+```
+Add the motion, vaul, sonner, atropos, cmdk, @dicebear/core, and @dicebear/collection packages to the project
 ```
 
 ### Add Web Fonts
@@ -100,14 +92,18 @@ Add the following to your `index.html` inside the `<head>` tag:
 
 After installation, confirm the app still builds:
 
-```bash
-npm run build
+Tell Claude:
+
+```
+Build the project for production
 ```
 
-If the build fails after installing libraries, run `npm install` again and retry. If dependency conflicts occur, try:
+If the build fails after installing libraries, run `npm install` again and retry. If dependency conflicts occur:
 
-```bash
-npm install --legacy-peer-deps
+Tell Claude:
+
+```
+Install the project dependencies using legacy peer deps to resolve conflicts
 ```
 
 ### Checkpoint

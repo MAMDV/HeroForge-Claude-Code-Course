@@ -25,15 +25,10 @@ By completing this workshop, you will:
 
 Before starting, verify your environment is ready:
 
-```bash
-# Check Claude Code is installed and updated
-claude --version
+Tell Claude:
 
-# Verify the LifeOps project builds
-npm run build
-
-# Verify tests pass
-npm test
+```
+Confirm Claude Code is installed and show me my project files, then build the project and run the tests
 ```
 
 ### Workshop 6 Deliverables
@@ -50,22 +45,18 @@ Ensure you have:
 
 Before beginning the exercises, create a new Git branch for your work. This keeps your changes isolated and makes it easy to open a pull request at the end.
 
-In your terminal, run (replace `yourname` with your actual name):
+Tell Claude (replace `yourname` with your actual name):
 
-```bash
-git checkout -b yourname-workshop-7
 ```
-
-**Or just tell Claude:**
-
-```bash
-claude "Create and switch to a new Git branch called yourname-workshop-7"
+Create and switch to a new Git branch called yourname-workshop-7
 ```
 
 You should now be on the `yourname-workshop-7` branch. Confirm with:
 
-```bash
-git branch --show-current   # Should show yourname-workshop-7
+Tell Claude:
+
+```
+Confirm which Git branch I'm currently on
 ```
 
 ---
@@ -385,15 +376,10 @@ Apply session management and context optimization strategies to maintain product
 
 Before finishing, verify everything works:
 
-```bash
-# Verify the project still builds
-npm run build
+Tell Claude:
 
-# Run tests
-npm test
-
-# Run linter
-npm run lint
+```
+Run the full verification suite — build, lint, and tests
 ```
 
 **Final checklist:**
